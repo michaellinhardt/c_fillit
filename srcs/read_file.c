@@ -6,7 +6,7 @@
 /*   By: mconnat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:43:10 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/10 02:20:18 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/10 12:25:15 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	read_file(char	**path)
 			{
 			buf[ret] = '\0';
 			if (check_file(buf, ret) == 1)
+			{
+				ft_putstr_fd("Invalid file map.\n", 2);
 				exit(0);
+			}
 			}
 }
