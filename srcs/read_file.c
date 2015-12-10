@@ -6,7 +6,7 @@
 /*   By: mconnat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:43:10 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/09 17:17:15 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/10 02:20:18 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	read_file(char	**path)
 	fd = open(path[1], O_RDONLY);
 	if (fd == -1)
 	{
-		ft_putstr_fd("Not enough entries, end of process.\n", 2);
+		ft_putstr_fd("File openning error, end of process.\n", 2);
 		exit(0);
 	}
 
 	while ((ret = read(fd, buf, BUF_SIZE)))
 			{
 			buf[ret] = '\0';
-			ft_putstr(buf);
-			ft_putnbr(ret);
+			if (check_file(buf, ret) == 1)
+				exit(0);
 			}
 }

@@ -18,7 +18,7 @@
 # define BUF_SIZE 545
 
 
-int		check_terminos(char buf);
+int		check_file(char *buf, int ret);
 void	read_file(char **path);
 
 #endif
