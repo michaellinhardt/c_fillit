@@ -20,6 +20,8 @@
 
 int		check_file(char *buf, int ret);
 void	read_file(char **path);
+int		check_map(int ret, int pieces);
+int		check_termi(char *buf);
 
 #endif
 
