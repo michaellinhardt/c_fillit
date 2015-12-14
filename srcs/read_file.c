@@ -6,13 +6,13 @@
 /*   By: mconnat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:43:10 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/10 19:04:46 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/14 14:51:02 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-void	read_file(char	**path)
+void	read_and_check(char	**path)
 {
 	int 	fd;
 	int 	ret;
@@ -26,17 +26,19 @@ void	read_file(char	**path)
 	}
 
 	while ((ret = read(fd, buf, BUF_SIZE)))
-			{
-			buf[ret] = '\0';
-			if (check_file(buf, ret) == 1)
-			{
-				ft_putstr_fd("Invalid map file.\n", 2);
-				exit(0);
-			}
-			if (check_termi(buf) == 1)
-			{
-				ft_putstr_fd("Invalid pieces file.\n", 2);
-				exit(0);
-			}
-			}
+	{
+		buf[ret] = '\0';
+		if (check_file(buf, ret) == 1)
+		{
+			ft_putstr_fd("Invalid map file.\n", 2);
+			exit(0);
+		}
+		if (check_termi(buf) == 1)
+		{
+			ft_putstr_fd("Invalid pieces file.\n", 2);
+			exit(0);
+		}
+	}
+	if (close(fd) == -1)
+		ft_putstr_fd("File closing error, GTFO.\n", 2);
 }

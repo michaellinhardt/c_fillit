@@ -12,7 +12,7 @@
 
 NAME	= 	fillit	
 
-SRCS	= 	check_terminos.c \
+SRCS	= 	check_file.c \
 			read_file.c \
 		  	main.c \
 		  	libft.a \

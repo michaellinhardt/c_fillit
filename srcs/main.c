@@ -6,12 +6,11 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/09 21:28:42 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/14 14:51:05 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 int		main(int ac, char **av)
 {
@@ -27,6 +26,8 @@ int		main(int ac, char **av)
 	}
 
 	else
-	read_file(av);
+	read_and_check(av);
+	//solve_and_print(av);
+	ft_putstr("Can You fillit ?\nYes we can !\n");
 	return (0);
 }

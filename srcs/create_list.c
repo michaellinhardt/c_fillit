@@ -1,28 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   create_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/09 16:23:38 by mconnat          ###   ########.fr       */
+/*   Created: 2015/12/14 14:03:48 by mconnat           #+#    #+#             */
+/*   Updated: 2015/12/14 14:14:14 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-#define FILLIT_H
+#include "../includes/fillit.h"
 
-# include <fcntl.h>
-# include "libft.h"
-# define BUF_SIZE 545
-
-
-void	read_and_check(char **path);
-int		check_file(char *buf, int ret);
-int		check_map(int ret, int pieces);
-int		check_termi(char *buf);
-int		solve_and_print(char **path);
-
-#endif
 
