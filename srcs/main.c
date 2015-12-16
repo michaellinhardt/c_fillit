@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/16 01:05:04 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/16 14:21:42 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		main(int ac, char **av)
 		tmp = tmp->next;
 	}
 	//printf("\npos : %d\nstr :\n%s\n", tmp->pos, tmp->piece);
+	list = convert_list(list);
 	//solve_and_print(av);
 	//ft_putstr("Can You fillit ?\nYes we can !\n");
 	return (0);

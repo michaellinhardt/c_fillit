@@ -41,5 +41,9 @@ echo $neutre"-----------"
 echo $green"valid_four :"$red
 ./fillit sample/valid_four
 echo $neutre"-----------"$red
-
-
+echo $green"valid_max :"$red
+./fillit sample/valid_max
+echo $neutre"-----------"$red
+echo $green"valid_one :"$red
+./fillit sample/valid_one
+echo $neutre"-----------"$red

@@ -6,7 +6,13 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 01:03:56 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/16 01:04:47 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/16 14:21:38 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+termi		convert_list(termi *list)
+{
+	put_to_top(list);
+	put_to_left(list);
+	put_to_alphabet(list);
+}
