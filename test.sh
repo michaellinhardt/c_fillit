@@ -14,6 +14,9 @@ echo $neutre"-----------"
 echo $green"Openning error :"$red
 ./fillit sample/invalid_fo
 echo $neutre"-----------"
+echo $green"char.test :"$red
+./fillit sample/char.test
+echo $neutre"-----------"
 echo $green"invalid_four :"$red
 ./fillit sample/invalid_four
 echo $neutre"-----------"

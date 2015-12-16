@@ -12,7 +12,9 @@
 
 NAME	= 	fillit	
 
-SRCS	= 	check_file.c \
+SRCS	= 	convert_list.c \
+			create_list.c \
+			check_file.c \
 			read_file.c \
 		  	main.c \
 		  	libft.a \
