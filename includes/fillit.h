@@ -34,6 +34,12 @@ termi				*create_termi_list(termi *list, char *str, int pos);
 char				**create_tab(char *buf, char **tab);
 void				del_split_tab(char **tab, int nb_termi);
 int					check_char_and_format(char *buf, int line, int char_nb, int pieces);
+void				convert_list(termi *list);
+char				put_to_top(termi *list, int ok);
+char				put_to_left(termi *list, int ok);
+char				*up_once(char *tmp);
+char				*left_once(char *tmp);
+char				put_to_alphabet(termi *list, char c);
 
 #endif
 

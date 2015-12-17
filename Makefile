@@ -13,6 +13,7 @@
 NAME	= 	fillit	
 
 SRCS	= 	convert_list.c \
+			convert_list2.c \
 			create_list.c \
 			check_file.c \
 			read_file.c \

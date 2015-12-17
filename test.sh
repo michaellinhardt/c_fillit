@@ -32,6 +32,9 @@ echo $neutre"-----------"
 echo $green"invalid_pieces3 :"$red
 ./fillit sample/invalid_pieces3
 echo $neutre"-----------"
+echo $green"invalid_pieces4 :"$red
+./fillit sample/invalid_pieces4
+echo $neutre"-----------"
 echo $green"invalide_map_size :"$red
 ./fillit sample/invalide_map_size
 echo $neutre"-----------"

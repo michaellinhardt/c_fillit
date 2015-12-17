@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/16 14:21:42 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/16 18:51:42 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		main(int ac, char **av)
 {
 	termi	*list;
 	termi	*tmp;
+	termi *new;
 
 	list = NULL;
 	if (ac > 2)
@@ -35,11 +36,18 @@ int		main(int ac, char **av)
 	tmp = list;
 	while (tmp->next)
 	{
-	//	printf("\npos : %d\nstr :\n%s\n", tmp->pos, tmp->piece);
+		printf("\npos : %d\nstr :\n%s\n", tmp->pos, tmp->piece);
 		tmp = tmp->next;
 	}
-	//printf("\npos : %d\nstr :\n%s\n", tmp->pos, tmp->piece);
-	list = convert_list(list);
+	printf("\npos : %d\nstr :\n%s\n", tmp->pos, tmp->piece);
+	convert_list(list);
+	new = list;
+	while (new->next)
+	{
+		printf("\npos : %d\nstr :\n%s\n", new->pos, new->piece);
+		new = new->next;
+	}
+	printf("\npos : %d\nstr :\n%s\n", new->pos, new->piece);
 	//solve_and_print(av);
 	//ft_putstr("Can You fillit ?\nYes we can !\n");
 	return (0);
