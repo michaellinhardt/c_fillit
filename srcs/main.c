@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/16 18:51:42 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/17 22:46:34 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int		main(int ac, char **av)
 	termi	*list;
 	termi	*tmp;
 	termi *new;
+	char	*buf;
 
+	buf = NULL;
 	list = NULL;
 	if (ac > 2)
 	{
@@ -31,8 +33,8 @@ int		main(int ac, char **av)
 		return (0);
 	}
 	else
-	read_and_check(av);
-	list = buffer_to_list(av, list);
+	buf = read_and_check(av);
+	list = buffer_to_list(buf, list);
 	tmp = list;
 	while (tmp->next)
 	{

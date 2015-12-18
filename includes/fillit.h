@@ -24,12 +24,12 @@ typedef	struct 		s_termi
 	struct s_termi	*next;
 }					termi;
 
-void				read_and_check(char **path);
+char				read_and_check(char **path);
 int					check_file(char *buf, int ret);
 int					check_map(int ret, int pieces);
 int					check_termi(char *buf);
 int					solve_and_print(char **path);
-termi				*buffer_to_list(char **path, termi *list);
+termi				*buffer_to_list(char *buf, termi *list);
 termi				*create_termi_list(termi *list, char *str, int pos);
 char				**create_tab(char *buf, char **tab);
 void				del_split_tab(char **tab, int nb_termi);
