@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/17 22:46:34 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/19 13:52:48 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(int ac, char **av)
 	termi *new;
 	char	*buf;
 
-	buf = NULL;
+	buf = ft_strnew(BUF_SIZE);
 	list = NULL;
 	if (ac > 2)
 	{
@@ -33,7 +33,7 @@ int		main(int ac, char **av)
 		return (0);
 	}
 	else
-	buf = read_and_check(av);
+	buf = read_and_check(av, buf);
 	list = buffer_to_list(buf, list);
 	tmp = list;
 	while (tmp->next)
@@ -51,6 +51,5 @@ int		main(int ac, char **av)
 	}
 	printf("\npos : %d\nstr :\n%s\n", new->pos, new->piece);
 	//solve_and_print(av);
-	//ft_putstr("Can You fillit ?\nYes we can !\n");
 	return (0);
 }

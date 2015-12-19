@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 14:03:48 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/17 22:24:03 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/19 13:44:45 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 
 termi	*buffer_to_list(char *buf, termi *list)
 {
-	/*int		fd;
-	int		ret;
-	char	buf[BUF_SIZE + 1];*/
 	char	**tab;
 	int 	nb_termi;
 
 	nb_termi = -1;
 	tab = NULL;
-	//fd = open(path[1], O_RDONLY);
-	//ret = read(fd, buf, BUF_SIZE);
-	//buf[ret] = '\0';
 	tab = create_tab(buf, tab);
 	while (tab[++nb_termi])
 		list = create_termi_list(list, tab[nb_termi], nb_termi);

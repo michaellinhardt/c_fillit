@@ -6,17 +6,16 @@
 /*   By: mconnat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:43:10 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/17 22:46:39 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/19 13:52:55 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-char	read_and_check(char	**path)
+char	*read_and_check(char	**path, char *buf)
 {
 	int		fd;
 	int 	ret;
-	char	buf[BUF_SIZE + 1];
 
 	fd = open(path[1], O_RDONLY);
 	if (fd == -1)
@@ -37,6 +36,4 @@ char	read_and_check(char	**path)
 		exit(0);
 	}
 	return (buf);
-	/*if (close(fd) == -1)
-		ft_putstr_fd("File closing error, end of process.\n", 2);*/
 }
