@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 14:03:48 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/19 13:44:45 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/19 17:48:49 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 termi	*buffer_to_list(char *buf, termi *list)
 {
 	char	**tab;
-	int 	nb_termi;
+	int		nb_termi;
 
 	nb_termi = -1;
 	tab = NULL;
@@ -26,10 +26,9 @@ termi	*buffer_to_list(char *buf, termi *list)
 	return (list);
 }
 
-
 termi	*create_termi_list(termi *list, char *str, int pos)
 {
-	termi 	*new;
+	termi	*new;
 	termi	*tmp;
 
 	new = (termi *)malloc(sizeof(termi));
@@ -71,7 +70,6 @@ char	**create_tab(char *buf, char **tab)
 
 void	del_split_tab(char **tab, int nb_termi)
 {
-
 	while (nb_termi > -1)
 	{
 		free(tab[nb_termi]);

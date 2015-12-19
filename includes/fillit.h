@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/19 13:52:57 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/19 17:38:56 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef	struct 		s_termi
 	struct s_termi	*next;
 }					termi;
 
+
+int					check_connect_termi(char *buf, int i, int valid2);
+void				call_error(int info);
 char				*read_and_check(char **path, char *buf);
 int					check_file(char *buf, int ret);
 int					check_map(int ret, int pieces);

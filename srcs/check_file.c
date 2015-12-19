@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_file.c                                   :+:      :+:    :+:   */
+/*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mconnat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/06 18:52:53 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/16 01:03:18 by mconnat          ###   ########.fr       */
+/*   Created: 2015/12/19 17:40:39 by mconnat           #+#    #+#             */
+/*   Updated: 2015/12/19 17:53:12 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,21 +64,43 @@ int		check_termi(char *buf)
 {
 	int i;
 	int valid;
+	int valid2;
 
 	valid = 0;
+	valid2 = 0;
 	i = 0;
 	while (buf[i])
 	{
 		if (valid == 4)
+		{
+			if (valid2 < 6)
+				return (1);
 			valid = 0;
-		if (buf[i] == '#' && (buf[i + 1] == '#' ||
-					buf[i - 1] == '#' ||
-					buf[i - 5] == '#' ||
-					buf[i + 5] == '#')) 
+			valid2 = 0;
+		}
+		if (buf[i] == '#' && (buf[i + 1] == '#' || buf[i - 1] == '#' ||
+					buf[i - 5] == '#' || buf[i + 5] == '#'))
 			valid++;
+		valid2 = check_connect_termi(buf, i, valid2);
 		i++;
 	}
 	if (valid != 0)
 		return (1);
 	return (0);
+}
+
+int		check_connect_termi(char *buf, int i, int valid2)
+{
+	if (buf[i] == '#')
+	{
+		if (buf[i + 1] == '#')
+			valid2++;
+		if (buf[i - 1] == '#')
+			valid2++;
+		if (buf[i - 5] == '#')
+			valid2++;
+		if (buf[i + 5] == '#')
+			valid2++;
+	}
+	return (valid2);
 }

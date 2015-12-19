@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 01:03:56 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/16 18:51:30 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/19 17:52:03 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,22 @@ void		convert_list(termi *list)
 
 char		put_to_top(termi *list, int ok)
 {
-	if (list->piece[0] == '.' && list->piece[1] == '.' && list->piece[2] == '.' && list->piece[3] == '.')
+	if (list->piece[0] == '.' && list->piece[1] == '.' &&
+			list->piece[2] == '.' && list->piece[3] == '.')
 	{
 		up_once(list->piece);
 	}
-	if (list->piece[0] == '#' || list->piece[1] == '#' || list->piece[2] == '#' || list->piece[3] == '#')
+	if (list->piece[0] == '#' || list->piece[1] == '#' ||
+			list->piece[2] == '#' || list->piece[3] == '#')
 		ok = 1;
 	if (ok == 1)
 		return (*list->piece);
-
 	put_to_top(list, ok);
 	return (*list->piece);
 }
 
-char	*up_once(char *tmp)
+char		*up_once(char *tmp)
 {
-
 	tmp[0] = tmp[5];
 	tmp[1] = tmp[6];
 	tmp[2] = tmp[7];
@@ -68,22 +68,20 @@ char	*up_once(char *tmp)
 
 char		put_to_left(termi *list, int ok)
 {
-	if (list->piece[0] == '.' && list->piece[5] == '.' && list->piece[10] == '.' && list->piece[15] == '.')
-	{
+	if (list->piece[0] == '.' && list->piece[5] == '.' &&
+			list->piece[10] == '.' && list->piece[15] == '.')
 		left_once(list->piece);
-	}
-	if (list->piece[0] == '#' || list->piece[5] == '#' || list->piece[10] == '#' || list->piece[15] == '#')
-	ok = 1;
+	if (list->piece[0] == '#' || list->piece[5] == '#' ||
+			list->piece[10] == '#' || list->piece[15] == '#')
+		ok = 1;
 	if (ok == 1)
 		return (*list->piece);
-
 	put_to_left(list, ok);
 	return (*list->piece);
 }
 
-char	*left_once(char *tmp)
+char		*left_once(char *tmp)
 {
-
 	tmp[0] = tmp[1];
 	tmp[5] = tmp[6];
 	tmp[10] = tmp[11];
