@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "../includes/fillit.h"
+#include "fillit.h"
 
 int		main(int ac, char **av)
 {

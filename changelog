@@ -9,3 +9,4 @@ Organisation du dossier:
 	a. création du dossier libs
 	b. déplacer libft.a du dossier srcs dans le dossier libs
 	c. création du fichier changelog
+	d. ajout README.md
