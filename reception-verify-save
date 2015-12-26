@@ -1,0 +1,12 @@
+[0;38m[[0;34m W8 [0;38m] [0;33mgit status -s[0;38m
+?? Makefile
+?? changelog
+?? doc.c
+?? fillit
+?? includes/
+?? libs/
+?? reception-verify-save
+?? sample/
+?? srcs/
+?? test.sh
+[0;38m[[0;34m W8 [0;38m] [0;33mgit add --all[0;38m

@@ -1,0 +1,11 @@
+v1.0
+Gestion compléte des input de fichiers, vérification et stoquage des donnée.
+
+v1.1
+Makefile:
+	a. changement dans la régle pour compiler, inclue la librairie via les options -L et -l
+		-L étant le dossier contenant les librairy du projet, "libs" et -l pour indiquer le nom de la lib, -lft étant transformé de la sorte: l = lib, soit lft = libft.a
+Organisation du dossier:
+	a. création du dossier libs
+	b. déplacer libft.a du dossier srcs dans le dossier libs
+	c. création du fichier changelog
