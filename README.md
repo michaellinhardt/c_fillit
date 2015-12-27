@@ -6,6 +6,7 @@
 ## repo map
 | repo path | description |
 | ------------- | ------------- |
+| fillit-algo.ods | excel algo doc |
 | doc.c | code documentations |
 | changelog | version modification |
 | includes | headers location |
