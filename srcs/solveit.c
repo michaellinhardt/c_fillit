@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_list2.c                                    :+:      :+:    :+:   */
+/*   solveit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/16 18:42:12 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/16 18:51:35 by mconnat          ###   ########.fr       */
+/*   Created: 2015/12/27 00:14:04 by mlinhard          #+#    #+#             */
+/*   Updated: 2015/12/27 00:48:24 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	put_to_alphabet(termi *list, char c)
+char	*solveit(termi *list)
 {
-	int i;
+	char	*map;
+	int		map_size;
 
-	i = 0;
-	while (list->piece[i])
-	{
-		if (list->piece[i] == '#')
-			list->piece[i] = c;
-		i++;
-	}
-	return (*list->piece);
+	map_size = map_size(list);
+	map = map_build(map_size);
 }

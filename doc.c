@@ -25,22 +25,36 @@ Deroulement du programme :
 	c . "put_to_left", qui va (par recursivité) placer la piece a l'extreme gauche de son carée.
 	d . "put_to_alphabet", qui va assigner un caracteres a la piece selon son emplacement dans la liste.
 
+5.	Appel de "solveit", qui prends la liste des pieces et pilote l'algo de résolution
+	a. appel "map_size" pour calculer la taille minimal de la map
+	b. génére une boucle tant que la solution n'est pas trouver qui incrémente la taille de la map a chaque echec et rappel les fonctions de résolution
+
+6. Appel de "printit" qui se contente d'afficher la string de la solution
 
 PATH des fonctions :
 
 "read_file.c"		void	read_and_check(char **path);
+
 "check_file.c"		int		check_file(char *buf, int ret);
-"check_file"		int		check_map(int ret, int pieces);
-"check_file"		int		check_termi(char *buf);
-NULL				int     solve_and_print(char **path);
-"create_list.c"		termi   *buffer_to_list(char **path, termi *list);
-"create_list.c"		termi   *create_termi_list(termi *list, char *str, int pos);
-"create_list.c"		char     **create_tab(char *buf, char **tab);
-"create_list.c"		void    del_split_tab(char **tab, int nb_termi);
-"check_file.c"		int     check_char_and_format(char *buf, int line, int char_nb, int pieces);
-"convert_list.c"	void    convert_list(termi *list);
-"convert_list.c"	char    put_to_top(termi *list, int ok);
-"convert_list.c"	char    put_to_left(termi *list, int ok);
-"convert_list.c"	char    *up_once(char *tmp);
-"convert_list.c"	char    *left_once(char *tmp);
-"convert_list2.c"	char    put_to_alphabet(termi *list, char c);
+"check_file.c"		int		check_map(int ret, int pieces);
+"check_file.c"		int		check_termi(char *buf);
+"check_file.c"		int		check_char_and_format(char *buf, int line, int char_nb, int pieces);
+
+"create_list.c"		termi	*buffer_to_list(char **path, termi *list);
+"create_list.c"		termi	*create_termi_list(termi *list, char *str, int pos);
+"create_list.c"		char	**create_tab(char *buf, char **tab);
+"create_list.c"		void	del_split_tab(char **tab, int nb_termi);
+
+"convert_list.c"	void	convert_list(termi *list);
+"convert_list.c"	char	put_to_top(termi *list, int ok);
+"convert_list.c"	char	put_to_left(termi *list, int ok);
+"convert_list.c"	char	*up_once(char *tmp);
+"convert_list.c"	char	*left_once(char *tmp);
+
+"convert_list2.c"	char	put_to_alphabet(termi *list, char c);
+
+"solveit.c"			char	*solveit(termi *list);
+"printit.c"			void	printit(char *solved);
+
+"map.c"				int		map_size(termi *list);
+"map.c"				char	*map_build(int map_size);

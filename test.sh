@@ -50,3 +50,18 @@ echo $neutre"-----------"$red
 echo $green"valid_one :"$red
 ./fillit sample/valid_one
 echo $neutre"-----------"$red
+echo $green"invalid_char1 :"$red
+./fillit sample/invalid_char1
+echo $neutre"-----------"$red
+echo $green"invalid_char2 :"$red
+./fillit sample/invalid_char2
+echo $neutre"-----------"$red
+echo $green"invalid_char3 :"$red
+./fillit sample/invalid_char3
+echo $neutre"-----------"$red
+echo $green"invalid_space1 :"$red
+./fillit sample/invalid_space1
+echo $neutre"-----------"$red
+echo $green"invalid_space2 :"$red
+./fillit sample/invalid_space2
+echo $neutre"-----------"$red

@@ -10,3 +10,9 @@ Organisation du dossier:
 	b. déplacer libft.a du dossier srcs dans le dossier libs
 	c. création du fichier changelog
 	d. ajout README.md
+Code:
+	a. changement du chemin d'inclusion de fillit.h dans tout les fichier .c
+	b. creation solveit.c: solveit(), voir doc.c
+	c. creation printit.c: printit(), voir doc.c
+	c. reorganisation de fillit.h (groupe les déclaration par fichiers)
+	d. creation map.c: map_size() et map_build(), voir doc.c
