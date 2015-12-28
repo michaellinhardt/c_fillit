@@ -6,14 +6,12 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 07:32:18 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:02:56 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
-#define FILLIT_H 
-
-
+#define FILLIT_H
 
 # include <fcntl.h>
 # include "libft.h"
