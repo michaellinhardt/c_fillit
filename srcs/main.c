@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/27 00:36:50 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 05:02:41 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int		main(int ac, char **av)
 	  }
 	  printf("\npos : %d\nstr :\n%s\n", tmp->pos, tmp->piece);*/
 	convert_list(list);
-	/*new = list;
+	new = list;
 	while (new->next)
 	  {
 	  printf("\npos : %d\nstr :\n%s\n", new->pos, new->piece);
 	  new = new->next;
 	  }
-	  printf("\npos : %d\nstr :\n%s\n", new->pos, new->piece);*/
-	solved = solveit(list);
+	  printf("\npos : %d\nstr :\n%s\n", new->pos, new->piece);
+	//solved = solveit(list);
 	return (0);
 }
