@@ -1,3 +1,7 @@
 lala ligne modifié
+<<<<<<< HEAD
 i = 3;
 n = ok;
+=======
+i = 1;
+>>>>>>> nest
