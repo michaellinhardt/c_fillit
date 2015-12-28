@@ -6,11 +6,10 @@
 ## repo map
 | repo path | description |
 | ------------- | ------------- |
-| fillit-algo.ods	 | excel algo doc				 |
-| doc.c				 | code documentations			 |
-| changelog			 | version modification			 |
-| includes			 | headers location				 |
-| libs				 | libft.a project here			 |
-| srcs				 | c sources					 |
-| test.sh			 | dev test script				 |
-| sample			 | tetrimonos test pieces		 |
+| fillit-algo.ods	 | excel detailed algo doc				 |
+| doc.c				 | code documentations					 |
+| includes			 | headers location						 |
+| libs				 | libft.a project here					 |
+| srcs				 | c sources							 |
+| test.sh			 | dev test script						 |
+| sample			 | tetrimonos test pieces for test.sh	 |

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mconnat <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2015/12/28 05:04:58 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/28 07:29:40 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,20 +30,20 @@ SRCSDIR = 	./srcs/
 H 		=	$(addprefix $(HDIR), $(HEADER))
 SRC 	=	$(addprefix $(SRCSDIR), $(SRCS))
 
-all		: $(NAME)
+all: $(NAME)
 
-$(NAME)	:
+$(NAME):
 	@gcc $(FLAGS) $(SRC) -o $(NAME) -I$(HDIR) -L$(LDIR) -lft
 
-clean	:
-	@rm -rf $(NAME)
+clean:
+	@/bin/rm -rf $(NAME)
 
-fclean	: clean
-	@rm -rf $(NAME)
+fclean: clean
+	@/bin/rm -rf $(NAME)
 
-re		: fclean all
+re: fclean all
 
-test	: fclean all
-	./fillit sample/valid_four
+test: re all
+	@./fillit sample/valid_four
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test

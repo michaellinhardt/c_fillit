@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 05:05:46 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 07:32:18 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
-#define FILLIT_H
+#define FILLIT_H 
+
+
 
 # include <fcntl.h>
 # include "libft.h"
