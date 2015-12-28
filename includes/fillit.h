@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/27 00:48:16 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 05:05:46 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,6 @@ char				*up_once(char *tmp);
 char				*left_once(char *tmp);
 
 char				put_to_alphabet(termi *list, char c);
-
-char				*solveit(termi *list);
-
-void				printit(char *solved);
-
-int					map_size(termi *list);
-char				*map_build(int map_size);
 
 #endif
 

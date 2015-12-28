@@ -6,7 +6,7 @@
 #    By: mconnat <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2015/12/27 00:35:26 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/28 05:04:58 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,6 @@ SRCS	= 	convert_list.c \
 			create_list.c \
 			check_file.c \
 			read_file.c \
-			solveit.c \
-			printit.c \
 			main.c
 
 HEADER	=	fillit.h

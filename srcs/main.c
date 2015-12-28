@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 05:02:41 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 05:06:19 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ int		main(int ac, char **av)
 {
 	termi	*list;
 	//termi	*tmp;
-	//termi	*new;
+	termi	*new;
 	char	*buf;
-	char	*solved;
 
 	buf = ft_strnew(BUF_SIZE);
 	list = NULL;
