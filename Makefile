@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mconnat <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2015/12/09 16:24:08 by mconnat          ###   ########.fr        #
+#    Updated: 2015/12/28 07:29:40 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,34 +17,33 @@ SRCS	= 	convert_list.c \
 			create_list.c \
 			check_file.c \
 			read_file.c \
-		  	main.c \
-		  	libft.a \
+			main.c
 
-HEADER	= 	fillit.h \
+HEADER	=	fillit.h
 
 FLAGS	=	-Wall -Wextra -Werror
 
-HDIR 	= 	./includes/ 
-
+HDIR 	=	./includes/
+LDIR 	= 	./libs/
 SRCSDIR = 	./srcs/
 
 H 		=	$(addprefix $(HDIR), $(HEADER))
-
 SRC 	=	$(addprefix $(SRCSDIR), $(SRCS))
 
+all: $(NAME)
 
+$(NAME):
+	@gcc $(FLAGS) $(SRC) -o $(NAME) -I$(HDIR) -L$(LDIR) -lft
 
-all		: $(NAME)
+clean:
+	@/bin/rm -rf $(NAME)
 
-$(NAME)	:
-	@gcc $(FLAGS) $(SRC) -o $(NAME) -I $(HDIR) 
+fclean: clean
+	@/bin/rm -rf $(NAME)
 
-clean	:
-	@rm -rf $(NAME)
+re: fclean all
 
-fclean	: clean
-	@rm -rf $(NAME)
+test: re all
+	@./fillit sample/valid_four
 
-re		: fclean all
-
-.PHONY: all make clean fclean re
+.PHONY: all clean fclean re test
