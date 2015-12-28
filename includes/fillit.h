@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 11:02:56 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:38:05 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ char				*up_once(char *tmp);
 char				*left_once(char *tmp);
 
 char				put_to_alphabet(termi *list, char c);
+
+int					solveit(termi *list);
+int					map_size(termi *list);
+char				map_str(int blabla);
 
 #endif
 

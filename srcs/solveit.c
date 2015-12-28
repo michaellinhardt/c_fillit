@@ -6,13 +6,13 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2015/12/28 11:10:48 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:37:51 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		solveit(s_termi *list)
+int		solveit(termi *list)
 {
 
 }

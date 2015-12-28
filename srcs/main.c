@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 11:05:46 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:44:56 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ int		main(int ac, char **av)
 		new = new->next;
 	} printf("pos : %d\nstr :\n%s\n", new->pos, new->piece);
 
-	solveit(list);
+	//solveit(list);
 	return (0);
 }
