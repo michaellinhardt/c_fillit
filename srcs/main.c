@@ -6,11 +6,12 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 11:05:46 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/29 12:08:03 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 int		main(int ac, char **av)
 {
@@ -29,6 +30,7 @@ int		main(int ac, char **av)
 //	list = buffer_to_list(buf, list);
 //	convert_list(list);
 //	ft_putstr(list->piece);
+	ft_strdel(&buf);	
 	int i;
 	i = 0;
 	while(tab[i])
@@ -37,6 +39,7 @@ int		main(int ac, char **av)
 		ft_putchar('\n');
 		i++;
 	}
+	printf("%s", buf);
 //	solveit(list);
 	return (0);
 }
