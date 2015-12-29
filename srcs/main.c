@@ -6,12 +6,11 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 15:16:02 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/29 12:08:03 by mconnat          ###   ########.fr       */
+/*   Updated: 2015/12/29 16:21:21 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 int		main(int ac, char **av)
 {
@@ -39,7 +38,8 @@ int		main(int ac, char **av)
 		ft_putchar('\n');
 		i++;
 	}
-	printf("%s", buf);
+	/* Segfault quand décommenté car buf est maintenant vide */
+	//ft_putstr(buf);
 //	solveit(list);
 	return (0);
 }
