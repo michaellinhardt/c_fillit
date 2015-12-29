@@ -7,7 +7,7 @@
 ## repo map
 | repo path | description |
 | ------------- | ------------- |
-| fillit-algo.ods	 | excel detailed algo doc				 |
+| fillit-algo.xls	 | excel technical algo doc				 |
 | doc.c				 | code documentations					 |
 | includes			 | headers location						 |
 | libs				 | libft.a project <a href="https://github.com/Serealyuzz/libft" target="_blank" >here</a>				 |
