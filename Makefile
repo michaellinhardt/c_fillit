@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2015/12/29 21:04:51 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/29 21:23:36 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,12 +106,12 @@ status: -is-project-folder save-dev -status
 ifeq ($(wildcard $(PATH_PROJET)/gitmax/.git), )
 	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitmax/ is not a git repository.$(BLANK)"
 else
-	@cd $(PATH_PROJET)/gitmax && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitmax/ git status $(BLANK)" && git status -s
+	@-cd $(PATH_PROJET)/gitmax && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitmax/ git status $(BLANK)" && git status -s
 endif
 ifeq ($(wildcard $(PATH_PROJET)/gitnest/.git), )
 	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitnest/ is not a git repository.$(BLANK)"
 else
-	@cd $(PATH_PROJET)/gitnest && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitnest/ git status$(BLANK)" && git status -s
+	@-cd $(PATH_PROJET)/gitnest && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitnest/ git status$(BLANK)" && git status -s
 endif
 
 #PUSH TO BOTH GITMAX AND GITNEST
@@ -131,7 +131,8 @@ ifeq ($(wildcard $(PATH_PROJET)/gitmax/.git), )
 	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitmax/ is not a git repository.$(BLANK)"
 else
 	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/gitmax/ push$(BLANK)"
-	@cd $(PATH_PROJET)/gitmax && git add $(ADD) && git commit -m "$(COMMIT)" && git push
+	@-cd $(PATH_PROJET)/gitmax && git add $(ADD) && git commit -m "$(COMMIT)"
+	@-cd $(PATH_PROJET)/gitmax && git add $(ADD) && git push
 endif
 
 #PUSH TO GITNEST
@@ -140,5 +141,6 @@ ifeq ($(wildcard $(PATH_PROJET)/gitnest/.git), )
 	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitnest/ is not a git repository.$(BLANK)"
 else
 	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/gitnest/ push$(BLANK)"
-	@cd $(PATH_PROJET)/gitnest && git add $(ADD) && git commit -m "$(COMMIT)" && git push
+	@-cd $(PATH_PROJET)/gitnest && git add $(ADD) && git commit -m "$(COMMIT)"
+	@-cd $(PATH_PROJET)/gitnest && git add $(ADD) && git push
 endif
