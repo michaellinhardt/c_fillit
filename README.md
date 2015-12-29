@@ -1,4 +1,4 @@
-# libft
+# Fillit
 - Langage: C
 - Subject: 42 school first algo project: compacting geometric shape from tetris inside the smallest area
 - Date: dec. 2015
