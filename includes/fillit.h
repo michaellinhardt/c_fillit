@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 11:38:05 by mlinhard         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:02:56 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,16 @@ char				*left_once(char *tmp);
 
 char				put_to_alphabet(termi *list, char c);
 
-int					solveit(termi *list);
-int					map_size(termi *list);
-char				map_str(int blabla);
+
+// Creation de tableau
+
+char				**create_tab2(char *buf, char **tab);
+void				convert_tab(char **tab);
+char				put_to_top_tab(char *str, int ok);
+char				*up_once_tab(char *tmp);
+char				put_to_left_tab(char *str, int ok);
+char				*left_once_tab(char *tmp);
+char				put_to_alphabet_tab(char *str, char c);
 
 #endif
 

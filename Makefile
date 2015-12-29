@@ -12,7 +12,10 @@
 
 NAME	= 	fillit	
 
-SRCS	= 	convert_list.c \
+SRCS	= 	create_tab.c \
+			convert_tab.c \
+			convert_tab2.c \
+			convert_list.c \
 			convert_list2.c \
 			create_list.c \
 			check_file.c \

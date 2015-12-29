@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solveit.c                                          :+:      :+:    :+:   */
+/*   convert_tab2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2015/12/28 11:10:48 by mlinhard         ###   ########.fr       */
+/*   Created: 2015/12/29 16:46:56 by mconnat           #+#    #+#             */
+/*   Updated: 2015/12/29 16:47:00 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		solveit(s_termi *list)
+char	put_to_alphabet_tab(char *str, char c)
 {
+	int i;
 
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '#')
+			str[i] = c;
+		i++;
+	}
+	return *(str);
 }
