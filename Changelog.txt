@@ -1,0 +1,8 @@
+31/12 12h00 :
+
+Le tableau de int retourne bien le nombre de piece,
+La fonction qui enleve une piece du tableau et retourne un nouveau tableau
+sans cette piece fonctionne.
+
+Probleme Actuel : free du tableau d'int a l'interieur de la fonction
+"del_piece".
