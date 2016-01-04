@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/30 12:01:03 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/31 11:50:58 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/04 17:49:07 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int		main(void)
 	int j;
 	int pos = 4;
 	int len;
+	char *map;
 
 	i = 0;
 	j = 0;
@@ -118,5 +119,4 @@ int		main(void)
 		j++;
 	}
 	return (0);
-
 }

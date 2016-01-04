@@ -46,6 +46,8 @@ char				*left_once(char *tmp);
 
 char				put_to_alphabet(termi *list, char c);
 
+void				solve_it(char **tab);
+
 
 // Creation de tableau
 

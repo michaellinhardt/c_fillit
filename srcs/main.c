@@ -6,7 +6,7 @@
 /*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/29 16:48:09 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/04 17:51:08 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,6 @@ int		main(int ac, char **av)
 //	convert_list(list);
 //	ft_putstr(list->piece);
 	ft_strdel(&buf);	
-	int i;
-	i = 0;
-	while(tab[i])
-	{
-		ft_putstr(tab[i]);
-		ft_putchar('\n');
-		i++;
-	}
-	/* Segfault quand décommenté car buf est maintenant vide */
-	//ft_putstr(buf);
-//	solveit(list);
+	solve_it(tab);
 	return (0);
 }
