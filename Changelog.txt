@@ -15,16 +15,22 @@
 04/01 19h29 :
 
 	Fonction terminé:
-		- map_first_size()
+		- map_first_size(tab), calcule la taille minimum en fonction du tableau de pieces
 			NB: la fonction s'appel map_first_size() a cause d'un conflit avec la variable map_size
+		- map_build(map_size), créer une map vide en fonction de la taille donné
+			NB: la chaine est construite a l'envers (en partant du dernier index, cela economise une variable d'iterateur)
 
 	Nouveau fichiers:
 		- map.c: contiendra les fonction de map: map_size, map_build, map_insert
 
-	fillit.h & Makefile
-		- declaration map_size et ajout a la liste des sources
-		- add stdio.h dans fillit.h (sera retiré a la fin)
+	fillit.h, déclaration:
+		- map_size (declaration)
+		- map_build (declaration)
+		- stdio.h (include, sera retiré quand programme terminé)
+
+	Makefile source:
+		- map.c
 
 	Fonction en développement:
-		- solve_it(), 
+		- solve_it()
 

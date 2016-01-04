@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/04 19:48:21 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/04 20:42:37 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ char				put_to_alphabet_tab(char *str, char c);
 // fichier map.c
 
 int					map_first_size(char **tab);
+char				*map_build(int map_size);
 
 #endif
