@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/04 20:46:47 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/04 23:25:52 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,10 @@ char				put_to_alphabet_tab(char *str, char c);
 
 int					map_first_size(char **tab);
 char				*map_build(int map_size);
+
+// fichier pieces.c
+
+int					*ok_build(char **tab);
+int					*ok_remove(int *ok, int remove);
 
 #endif

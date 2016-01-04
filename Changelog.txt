@@ -24,8 +24,8 @@
 		- map.c: contiendra les fonction de map: map_size, map_build, map_insert
 
 	fillit.h, déclaration:
-		- map_size (declaration)
-		- map_build (declaration)
+		- map_size()
+		- map_build()
 		- stdio.h (include, sera retiré quand programme terminé)
 
 	Makefile source:
@@ -42,3 +42,23 @@
 	Bug-fix:
 		- map_build()
 			La fonction ne généré pas la map correctement, c'est réglé
+
+04/01 22h56 :
+
+	Fonction terminé:
+		- ok_build()
+			NB: Construit la liste pour 5 pieces: {0,1,2,3,4,-1}
+
+	Fonction en développement:
+		- solve_it()
+		- ok_remove()
+
+	Nouveau fichiers:
+		- pieces.c: contiens les fonctions ok_build et ok_remove
+
+	fillit.h, déclaration:
+		- ok_build()
+		- ok_remove()
+
+	Makefile source:
+		- pieces.c

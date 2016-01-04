@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_it.c                                         :+:      :+:    :+:   */
+/*   pieces.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/04 23:25:53 by mlinhard         ###   ########.fr       */
+/*   Created: 2016/01/04 22:55:30 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/01/04 23:25:50 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	solve_it(char **tab)
+int					*ok_build(char **tab)
 {
-	int		map_size;
-	char	*map_str;
 	int		*ok;
+	int		i;
 
-	map_size = map_first_size(tab) - 1;
-	while (42)
-	{
-		map_size++;
-		map_str = map_build(map_size);
+	i = 0;
+	while (tab[i])
+		i++;
 
-		ok = ok_build(tab);
+	ok = (int *)malloc(sizeof(int) * i + 1);
+	ok[i] = -1;
+	while (i > -1 && i--)
+		ok[i] = i;
+	return (ok);
+}
 
-		printf("Map size  : %d\n", map_size);
-		printf("Map empty : ->\n%s", map_str);
-		printf("ok = { "); while (*ok != -1) { printf("%d,", *ok); ok++; } printf("-1 }\n");
-
-		break ;
-	}
+int					*ok_remove(int *ok, int remove)
+{
+	ok++;
+	remove++;
+	return (ok);
 }
