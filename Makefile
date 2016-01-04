@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/04 19:15:41 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/04 20:02:48 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS	= 	create_tab.c \
 			check_file.c \
 			solve_it.c \
 			read_file.c \
+			map.c \
 			main.c
 
 HEADER	=	fillit.h

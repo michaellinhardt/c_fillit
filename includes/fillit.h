@@ -6,12 +6,14 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/28 11:02:56 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/04 19:48:21 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 #define FILLIT_H
+
+# include <stdio.h>
 
 # include <fcntl.h>
 # include "libft.h"
@@ -48,7 +50,6 @@ char				put_to_alphabet(termi *list, char c);
 
 void				solve_it(char **tab);
 
-
 // Creation de tableau
 
 char				**create_tab2(char *buf, char **tab);
@@ -59,5 +60,8 @@ char				put_to_left_tab(char *str, int ok);
 char				*left_once_tab(char *tmp);
 char				put_to_alphabet_tab(char *str, char c);
 
-#endif
+// fichier map.c
 
+int					map_first_size(char **tab);
+
+#endif

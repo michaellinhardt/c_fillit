@@ -1,13 +1,30 @@
 31/12 12h00 :
 
-Le tableau de int retourne bien le nombre de piece,
-La fonction qui enleve une piece du tableau et retourne un nouveau tableau
-sans cette piece fonctionne.
+	Le tableau de int retourne bien le nombre de piece,
+	La fonction qui enleve une piece du tableau et retourne un nouveau tableau
+	sans cette piece fonctionne.
 
-Probleme Actuel : free du tableau d'int a l'interieur de la fonction
-"del_piece".
+	Probleme Actuel : free du tableau d'int a l'interieur de la fonction
+	"del_piece".
 
 04/01 19h07 :
 
-Modif du Makefile pour travailler depuis le depo de max et non pas
-depuis un dossier dev.
+	Modif du Makefile pour travailler depuis le depo de max et non pas
+	depuis un dossier dev.
+
+04/01 19h29 :
+
+	Fonction terminé:
+		- map_first_size()
+			NB: la fonction s'appel map_first_size() a cause d'un conflit avec la variable map_size
+
+	Nouveau fichiers:
+		- map.c: contiendra les fonction de map: map_size, map_build, map_insert
+
+	fillit.h & Makefile
+		- declaration map_size et ajout a la liste des sources
+		- add stdio.h dans fillit.h (sera retiré a la fin)
+
+	Fonction en développement:
+		- solve_it(), 
+
