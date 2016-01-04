@@ -14,10 +14,8 @@ NAME	= 	fillit
 SRCS	= 	create_tab.c \
 			convert_tab.c \
 			convert_tab2.c \
-			convert_list.c \
-			convert_list2.c \
-			create_list.c \
 			check_file.c \
+			solve_it.c \
 			read_file.c \
 			main.c
 

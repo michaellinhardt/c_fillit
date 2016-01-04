@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/04 17:59:41 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/04 18:07:59 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,7 @@ int		main(int ac, char **av)
 //	list = buffer_to_list(buf, list);
 //	convert_list(list);
 //	ft_putstr(list->piece);
-	ft_strdel(&buf);
-	int i;
-	i = 0;
-	while(tab[i])
-	{
-		ft_putstr(tab[i]);
-		ft_putchar('\n');
-		i++;
-	}
-	/* Segfault quand décommenté car buf est maintenant vide */
-	//ft_putstr(buf);
-//	solveit(list);
+	ft_strdel(&buf);	
+	solve_it(tab);
 	return (0);
 }
