@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/04 20:02:48 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/04 20:15:32 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,9 @@ RED				= \033[0;31m
 GREEN			= \033[0;32m
 YELLOW			= \033[0;33m
 BLUE			= \033[0;34m
-BLANK			= \033[0;38m
-OK				= $(BLANK)[ $(GREEN)OK $(BLANK)]
-FAIL			= $(BLANK)[ $(RED)FAIL $(BLANK)]
+WHITE			= \033[0;38m
+OK				= $(WHITE)[ $(GREEN)OK $(WHITE)]
+FAIL			= $(WHITE)[ $(RED)FAIL $(WHITE)]
 
 all: $(NAME)
 $(NAME):
@@ -77,7 +77,7 @@ endif
 
 # GITMAX CHECKOUT MIKA BRANCH
 -gitmax-setbranch:
-	@echo "$(OK)$(YELLOW) Set branch mika on gitmax..$(BLANK)"
+	@echo "$(OK)$(YELLOW) Set branch mika on gitmax..$(WHITE)"
 	@-cd $(PATH_PROJET)/gitmax && /bin/git checkout -b mika
 	@-cd $(PATH_PROJET)/gitmax && git checkout mika
 	@-cd $(PATH_PROJET)/gitmax && git push origin mika
@@ -85,27 +85,27 @@ endif
 # SAVE CONTENT OF DEV FOLDER TO GIT42 GITMAX & GITNEST
 save-dev: -is-project-folder -save-dev
 -save-dev:
-	@echo "$(OK)$(YELLOW) Delete & Create swap folder..$(BLANK)"
+	@echo "$(OK)$(YELLOW) Delete & Create swap folder..$(WHITE)"
 	@/bin/rm -rf $(PATH_PROJET)/swap
 	@mkdir -p $(PATH_PROJET)/swap
-	@echo "$(OK)$(YELLOW) Clear gitnest folder..$(BLANK)"
+	@echo "$(OK)$(YELLOW) Clear gitnest folder..$(WHITE)"
 	@touch $(PATH_PROJET)/gitnest/prevent_mv_bug
 	@mv $(PATH_PROJET)/gitnest/* $(PATH_PROJET)/swap/
 	@/bin/rm -rf $(PATH_PROJET)/swap
-	@echo "$(OK)$(YELLOW) Copy gitmax folder to gitnest..$(BLANK)"
+	@echo "$(OK)$(YELLOW) Copy gitmax folder to gitnest..$(WHITE)"
 	@cp -r $(PATH_PROJET)/gitmax/* $(PATH_PROJET)/gitnest/
 
 status: -is-project-folder -save-dev -status
 -status:
 ifeq ($(wildcard $(PATH_PROJET)/gitmax/.git), )
-	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitmax/ is not a git repository.$(BLANK)"
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitmax/ is not a git repository.$(WHITE)"
 else
-	@-cd $(PATH_PROJET)/gitmax && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitmax/ git status $(BLANK)" && git status -s
+	@-cd $(PATH_PROJET)/gitmax && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitmax/ git status $(WHITE)" && git status -s
 endif
 ifeq ($(wildcard $(PATH_PROJET)/gitnest/.git), )
-	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitnest/ is not a git repository.$(BLANK)"
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitnest/ is not a git repository.$(WHITE)"
 else
-	@-cd $(PATH_PROJET)/gitnest && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitnest/ git status$(BLANK)" && git status -s
+	@-cd $(PATH_PROJET)/gitnest && echo "$(OK) $(YELLOW)$(PATH_PROJET)/gitnest/ git status$(WHITE)" && git status -s
 endif
 
 #PUSH TO BOTH GITMAX AND GITNEST
@@ -122,9 +122,9 @@ endif
 #PUSH TO GITMAX
 push-gitmax: -is-project-folder -push-var-verif
 ifeq ($(wildcard $(PATH_PROJET)/gitmax/.git), )
-	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitmax/ is not a git repository.$(BLANK)"
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitmax/ is not a git repository.$(WHITE)"
 else
-	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/gitmax/ push$(BLANK)"
+	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/gitmax/ push$(WHITE)"
 	@-cd $(PATH_PROJET)/gitmax && git add $(ADD) && git commit -m "$(COMMIT)"
 	@-cd $(PATH_PROJET)/gitmax && git add $(ADD) && git push
 endif
@@ -132,9 +132,9 @@ endif
 #PUSH TO GITNEST
 push-gitnest: -is-project-folder -push-var-verif
 ifeq ($(wildcard $(PATH_PROJET)/gitnest/.git), )
-	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitnest/ is not a git repository.$(BLANK)"
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/gitnest/ is not a git repository.$(WHITE)"
 else
-	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/gitnest/ push$(BLANK)"
+	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/gitnest/ push$(WHITE)"
 	@-cd $(PATH_PROJET)/gitnest && git add $(ADD) && git commit -m "$(COMMIT)"
 	@-cd $(PATH_PROJET)/gitnest && git add $(ADD) && git push
 endif
