@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/04 23:25:53 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/05 00:11:03 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,18 @@ void	solve_it(char **tab)
 
 		ok = ok_build(tab);
 
+		int i = 0; printf("ok full = { "); while (ok[i] != -1) { printf("%d,", ok[i]); i++; } printf("-1 }\n");
+
+		ok = ok_remove(ok, 1);
+
+		i = 0; printf("ok remove 1 = { "); while (ok[i] != -1) { printf("%d,", ok[i]); i++; } printf("-1 }\n");
+
+		ok = ok_remove(ok, 0);
+
+		i = 0; printf("ok remove 0 = { "); while (ok[i] != -1) { printf("%d,", ok[i]); i++; } printf("-1 }\n");
+
 		printf("Map size  : %d\n", map_size);
 		printf("Map empty : ->\n%s", map_str);
-		printf("ok = { "); while (*ok != -1) { printf("%d,", *ok); ok++; } printf("-1 }\n");
 
 		break ;
 	}

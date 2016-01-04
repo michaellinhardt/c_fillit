@@ -62,3 +62,12 @@
 
 	Makefile source:
 		- pieces.c
+
+05/01 00h08 :
+
+	Fonction en développement:
+		- solve_it()
+
+	Fonction terminé:
+		- ok_remove()
+			NB: fonction de type "miracle", marche mais ne devrais pas .. a vérifier une fois l'algo codé.
