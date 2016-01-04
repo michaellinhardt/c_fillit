@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2015/12/29 21:27:52 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/04 17:56:05 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ H 		=	$(addprefix $(HDIR), $(HEADER))
 SRC 	=	$(addprefix $(SRCSDIR), $(SRCS))
 
 # DETECT PROJECT FOLDER
-PATH_CURR		= $(shell pwd)
+PATH_CURR		= $(shell /bin/pwd)
 ifneq ($(wildcard $(PATH_CURR)/.path_root), )
 	PATH_PROJET = $(PATH_CURR)
 else

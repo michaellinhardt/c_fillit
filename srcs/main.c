@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/29 16:48:09 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/04 17:59:41 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(int ac, char **av)
 //	list = buffer_to_list(buf, list);
 //	convert_list(list);
 //	ft_putstr(list->piece);
-	ft_strdel(&buf);	
+	ft_strdel(&buf);
 	int i;
 	i = 0;
 	while(tab[i])
