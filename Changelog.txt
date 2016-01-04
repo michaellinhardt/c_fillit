@@ -34,3 +34,11 @@
 	Fonction en développement:
 		- solve_it()
 
+04/01 22h20 :
+
+	Fonction en développement:
+		- solve_it()
+
+	Bug-fix:
+		- map_build()
+			La fonction ne généré pas la map correctement, c'est réglé

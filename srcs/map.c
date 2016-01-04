@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/04 20:42:31 by mlinhard         ###   ########.fr       */
+/*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/01/04 22:42:33 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,17 @@ char	*map_build(int map_size)
 {
 	char	*map_str;
 	int		newline;
+	int		newline_count;
 
-	map_size = map_size * 4 + 4;
-	map_str = ft_strnew((map_size + 1));
-	newline = 5;
+	newline = map_size + 1;
+	newline_count = newline;
+	map_size = map_size * map_size + map_size;
+	map_str = ft_strnew((map_size));
 	map_str[map_size] = '\0';
 	while(map_size > -1 && map_size--)
 	{
-		map_str[map_size] = (newline == 5) ? '\n' : '.' ;
-		newline = (newline > 4) ? 1 : newline + 1 ;
+		map_str[map_size] = (newline_count == newline) ? '\n' : '.' ;
+		newline_count = (newline_count == newline) ? 1 : newline_count + 1 ;
 	}
 	return (map_str);
 }

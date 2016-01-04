@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/04 20:42:30 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/04 22:39:10 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	solve_it(char **tab)
 		map_str = map_build(map_size);
 
 		printf("Map size  : %d\n", map_size);
-		printf("Map empty : \n%s", map_str);
+		printf("Map empty : ->\n%s", map_str);
 
 		break ;
 	}

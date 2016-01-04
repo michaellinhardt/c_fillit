@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/04 20:42:29 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/04 22:38:41 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ fclean: clean
 re: fclean all
 
 test: re all
-	@./fillit sample/valid_four
+	@./fillit sample/valid_max | /bin/cat -e
 
 .PHONY: all clean fclean re test
 
