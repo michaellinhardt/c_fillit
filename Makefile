@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/05 03:29:13 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/05 03:36:51 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS	= 	create_tab.c \
 			read_file.c \
 			map.c \
 			pieces.c \
+			mapsnap.c \
 			main.c
 
 HEADER	=	fillit.h

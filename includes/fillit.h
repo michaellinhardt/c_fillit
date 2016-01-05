@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/05 02:35:22 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/05 03:39:44 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,9 @@ char					put_to_alphabet_tab(char *str, char c);
 
 int						map_first_size(char **tab);
 char					*map_build(int map_size);
+
+// fichier mapsnap.c
+
 t_mapsnap				*snapit(t_mapsnap *prev, int *ok, char *map_str, int last);
 void					free_mapsnap(t_mapsnap *mapsnap);
 void					free_this_snap(t_mapsnap *free_it);

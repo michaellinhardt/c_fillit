@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/05 03:28:39 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/05 03:39:01 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,10 @@ void	solve_it(char **tab)
 	{
 		map_size++;
 		map_str = map_build(map_size);
-
 		ok = ok_build(tab);
 		mapsnap = snapit((t_mapsnap *)NULL, ok, map_str, -1);
-		ok = ok_build(tab); map_str = map_build(map_size);
-		mapsnap = snapit(mapsnap, ok, map_str, 0);
-		ok = ok_build(tab); map_str = map_build(map_size);
-		mapsnap = snapit(mapsnap, ok, map_str, 1);
-		ok = ok_build(tab); map_str = map_build(map_size);
-		mapsnap = snapit(mapsnap, ok, map_str, 2);
-		ok = ok_build(tab); map_str = map_build(map_size);
-		mapsnap = snapit(mapsnap, ok, map_str, 3);
-
-		printf("Map size  : %d\n", map_size);
-		printf("Map empty : ->\n%s", map_str);
 
 		free_mapsnap(mapsnap);
-
 		break ;
 	}
 }
