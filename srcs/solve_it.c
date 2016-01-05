@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/05 00:11:03 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/05 03:28:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	solve_it(char **tab)
 {
-	int		map_size;
-	char	*map_str;
-	int		*ok;
+	int			map_size;
+	char		*map_str;
+	int			*ok;
+	t_mapsnap	*mapsnap;
 
 	map_size = map_first_size(tab) - 1;
 	while (42)
@@ -25,19 +26,20 @@ void	solve_it(char **tab)
 		map_str = map_build(map_size);
 
 		ok = ok_build(tab);
-
-		int i = 0; printf("ok full = { "); while (ok[i] != -1) { printf("%d,", ok[i]); i++; } printf("-1 }\n");
-
-		ok = ok_remove(ok, 1);
-
-		i = 0; printf("ok remove 1 = { "); while (ok[i] != -1) { printf("%d,", ok[i]); i++; } printf("-1 }\n");
-
-		ok = ok_remove(ok, 0);
-
-		i = 0; printf("ok remove 0 = { "); while (ok[i] != -1) { printf("%d,", ok[i]); i++; } printf("-1 }\n");
+		mapsnap = snapit((t_mapsnap *)NULL, ok, map_str, -1);
+		ok = ok_build(tab); map_str = map_build(map_size);
+		mapsnap = snapit(mapsnap, ok, map_str, 0);
+		ok = ok_build(tab); map_str = map_build(map_size);
+		mapsnap = snapit(mapsnap, ok, map_str, 1);
+		ok = ok_build(tab); map_str = map_build(map_size);
+		mapsnap = snapit(mapsnap, ok, map_str, 2);
+		ok = ok_build(tab); map_str = map_build(map_size);
+		mapsnap = snapit(mapsnap, ok, map_str, 3);
 
 		printf("Map size  : %d\n", map_size);
 		printf("Map empty : ->\n%s", map_str);
+
+		free_mapsnap(mapsnap);
 
 		break ;
 	}

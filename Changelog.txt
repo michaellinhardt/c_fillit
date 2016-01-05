@@ -12,62 +12,34 @@
 	Modif du Makefile pour travailler depuis le depo de max et non pas
 	depuis un dossier dev.
 
-04/01 19h29 :
+05/01 03h24 :
 
 	Fonction terminé:
+		- snapit() // enregistre le premier maillon et les suivant
+		- ok_remove()
+			NB: fonction de type "miracle", marche mais ne devrais pas .. a vérifier une fois l'algo codé.
+		- ok_build()
+			NB: Construit la liste pour 5 pieces: {0,1,2,3,4,-1}
 		- map_first_size(tab), calcule la taille minimum en fonction du tableau de pieces
 			NB: la fonction s'appel map_first_size() a cause d'un conflit avec la variable map_size
 		- map_build(map_size), créer une map vide en fonction de la taille donné
 			NB: la chaine est construite a l'envers (en partant du dernier index, cela economise une variable d'iterateur)
+		- free_mapsnap()
+		- free_this_snap()
 
 	Nouveau fichiers:
+		- pieces.c: contiens les fonctions ok_build et ok_remove
 		- map.c: contiendra les fonction de map: map_size, map_build, map_insert
 
 	fillit.h, déclaration:
+		- snapit()
+		- ok_build()
+		- ok_remove()
 		- map_size()
 		- map_build()
 		- stdio.h (include, sera retiré quand programme terminé)
 
 	Makefile source:
+		- pieces.c
 		- map.c
 
-	Fonction en développement:
-		- solve_it()
-
-04/01 22h20 :
-
-	Fonction en développement:
-		- solve_it()
-
-	Bug-fix:
-		- map_build()
-			La fonction ne généré pas la map correctement, c'est réglé
-
-04/01 22h56 :
-
-	Fonction terminé:
-		- ok_build()
-			NB: Construit la liste pour 5 pieces: {0,1,2,3,4,-1}
-
-	Fonction en développement:
-		- solve_it()
-		- ok_remove()
-
-	Nouveau fichiers:
-		- pieces.c: contiens les fonctions ok_build et ok_remove
-
-	fillit.h, déclaration:
-		- ok_build()
-		- ok_remove()
-
-	Makefile source:
-		- pieces.c
-
-05/01 00h08 :
-
-	Fonction en développement:
-		- solve_it()
-
-	Fonction terminé:
-		- ok_remove()
-			NB: fonction de type "miracle", marche mais ne devrais pas .. a vérifier une fois l'algo codé.

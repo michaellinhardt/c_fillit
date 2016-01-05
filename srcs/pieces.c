@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 22:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/05 00:08:06 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/05 02:35:23 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int		*ok_remove(int *ok, int piece)
 	i = 0;
 	while (ok[i] != -1)
 		i++;
-	ok_new = (int *)malloc(sizeof(int) * i);
+	if (!(ok_new = (int *)malloc(sizeof(int) * i)))
+		return (NULL);
 	ok_new[i] = -1;
 	i = 0;
 	j = 0;
@@ -50,12 +51,5 @@ int		*ok_remove(int *ok, int piece)
 		}
 		i++;
 	}
-
 	return (ok_new);
-}
-
-void	ok_free(int *ok)
-{
-	// A FAIRE PLUS TARD
-	ok++;
 }
