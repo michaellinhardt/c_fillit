@@ -25,21 +25,19 @@
 		- map_build(map_size), créer une map vide en fonction de la taille donné
 			NB: la chaine est construite a l'envers (en partant du dernier index, cela economise une variable d'iterateur)
 		- free_mapsnap()
+			demande a free_this_snap de free les malloc relatif a chaque maillon de la chaine
 		- free_this_snap()
+			Free ok et map_str du maillon actuel
 
 	Nouveau fichiers:
 		- pieces.c: contiens les fonctions ok_build et ok_remove
-		- map.c: contiendra les fonction de map: map_size, map_build, map_insert
+		- map.c: contiend les fonction de map: map_size, map_build, map_insert
+		- mapsnap.c: contiend snapit, free_mapsnap, free_this_snap
 
 	fillit.h, déclaration:
-		- snapit()
-		- ok_build()
-		- ok_remove()
-		- map_size()
-		- map_build()
+		- déclaration de toutes les nouvelles fonctions
 		- stdio.h (include, sera retiré quand programme terminé)
 
 	Makefile source:
-		- pieces.c
-		- map.c
+		- ajouts des 3 nouveaux fichiers dnas la liste des sources
 

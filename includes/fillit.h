@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/05 03:39:44 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/05 03:45:10 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ char					*left_once(char *tmp);
 
 char					put_to_alphabet(termi *list, char c);
 
+// fichier solve_it.c
+
 void					solve_it(char **tab);
+int						loop_mapsnap(t_mapsnap *mapsnap, char **tab);
 
 // Creation de tableau
 
