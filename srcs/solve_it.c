@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/05 05:27:31 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/05 10:20:41 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	solve_it(char **tab)
 
 int		loop_mapsnap(t_mapsnap *mapsnap, char **tab)
 {
-	int			*i;
+	int			i;
 	char		*map_new;
 
 	i = 0;
