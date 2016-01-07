@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/07 16:54:15 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/07 22:48:35 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char					put_to_alphabet_tab(char *str, char c);
 
 // fichier solve_it.c
 void					solve_it(int ***diez);
-int						loop_mapsnap(t_mapsnap *mapsnap, int ***diez, int map_size);
+int						loop_mapsnap(t_mapsnap *mapsnap, int ***diez, int map_size, int id);
 
 
 // fichier create_tab.c
@@ -77,9 +77,6 @@ int						*ok_remove(int *ok, int remove);
 // fichier create_diez_tab.c
 int						***create_diez_tab(char **tab);
 int						**found_coord(char *tab,int **diez);
-
-// debug
-void					print_snap(t_mapsnap *mapsnap, int id);
-void					test(int ***diez);
+int						**set_letter(int **diez);
 
 #endif

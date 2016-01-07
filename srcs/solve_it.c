@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/07 19:26:36 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/07 22:48:02 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,30 @@ void	solve_it(int ***diez)
 		map_str = map_build(map_size);
 		ok = ok_build(diez);
 		mapsnap = snapit((t_mapsnap *)NULL, ok, map_str, -1);
-		if (loop_mapsnap(mapsnap, diez, map_size))
+		if (loop_mapsnap(mapsnap, diez, map_size, 0))
 			break ;
 		free_mapsnap(mapsnap);
-		break ;
 	}
 }
 
-int		loop_mapsnap(t_mapsnap *mapsnap, int ***diez, int map_size)
+int		loop_mapsnap(t_mapsnap *mapsnap, int ***diez, int map_size, int id)
 {
 	int			i;
 	char		*map_new;
-	static int	id;	if (!id) id = 0; id++; // debuging
 
-	print_snap(mapsnap, id);
+	id++;
 
 	if (mapsnap->ok[0] == -1)
 	{
-		printf("\nRIEN A POSER !!\n");
-		return 1;
+		ft_putstr(mapsnap->map_str);
+		return (1);
 	}
 
 	i = 0;
-	while (mapsnap->ok[i] != -1)
+	while (mapsnap->ok[i] > -1)
 	{
 		if ((map_new = map_insert(mapsnap->map_str, diez[mapsnap->ok[i]], map_size)))
-			if (loop_mapsnap(snapit(mapsnap, ok_remove(mapsnap->ok, mapsnap->ok[i]), map_new, mapsnap->ok[i]), diez, map_size))
+			if (loop_mapsnap(snapit(mapsnap, ok_remove(mapsnap->ok, mapsnap->ok[i]), map_new, mapsnap->ok[i]), diez, map_size, id))
 				return (1);
 		i++;
 	}

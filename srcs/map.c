@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/07 20:08:32 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/07 22:42:31 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,20 @@ char		*map_insert(char *map_str, int **diez, int map_size)
 	i = -1;
 	while (map_str[++i])
 	{
-		if (map_str[i] == '.')
+		if (map_str[i] != '\n')
 			{
 				check_pos = calc_check_pos(i, diez[0][0], diez[0][1], map_size);
-				if (ft_isalpha(map_str[check_pos]) == 1)
-					continue;
+				if (map_str[check_pos] != '.')
+					continue ;
 				check_pos = calc_check_pos(i, diez[1][0], diez[1][1], map_size);
-				if (ft_isalpha(map_str[check_pos]) == 1)
-					continue;
+				if (map_str[check_pos] != '.')
+					continue ;
 				check_pos = calc_check_pos(i, diez[2][0], diez[2][1], map_size);
-				if (ft_isalpha(map_str[check_pos]) == 1)
-					continue;
+				if (map_str[check_pos] != '.')
+					continue ;
 				check_pos = calc_check_pos(i, diez[3][0], diez[3][1], map_size);
-				if (ft_isalpha(map_str[check_pos]) == 1)
-					continue;
+				if (map_str[check_pos] != '.')
+					continue ;
 				return (put_piece_on_map(map_str, diez, i, map_size));
 			}
 	}
@@ -82,13 +82,11 @@ int			calc_check_pos(int i, int line, int row, int map_size)
 char		*put_piece_on_map(char *map_str, int **diez, int i, int map_size)
 {
 	char *new_map;
-	static char c;
 
-	c = (!c) ? 'A' : c++;
 	new_map = ft_strdup(map_str);
-	new_map[calc_check_pos(i, diez[0][0], diez[0][1], map_size)] = c;
-	new_map[calc_check_pos(i, diez[1][0], diez[1][1], map_size)] = c;
-	new_map[calc_check_pos(i, diez[2][0], diez[2][1], map_size)] = c;
-	new_map[calc_check_pos(i, diez[3][0], diez[3][1], map_size)] = c;
+	new_map[calc_check_pos(i, diez[0][0], diez[0][1], map_size)] = (char)(diez[0][2]);
+	new_map[calc_check_pos(i, diez[1][0], diez[1][1], map_size)] = (char)(diez[1][2]);
+	new_map[calc_check_pos(i, diez[2][0], diez[2][1], map_size)] = (char)(diez[2][2]);
+	new_map[calc_check_pos(i, diez[3][0], diez[3][1], map_size)] = (char)(diez[3][2]);
 	return (new_map);
 }

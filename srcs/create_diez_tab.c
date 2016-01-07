@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 10:01:52 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/07 16:39:54 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/07 22:27:14 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		***create_diez_tab(char **tab)
 	while (tab[i])
 	{
 		diez[i] = found_coord(tab[i], diez[i]);
+		diez[i] = set_letter(diez[i]);
 		i++;
 	}
 	diez[i] = (int **)NULL;
@@ -48,7 +49,7 @@ int		**found_coord(char *tab, int **diez)
 	{
 		if (ft_isalpha(tab[i]))
 		{
-			diez[j] = (int *)malloc(sizeof(int) * 2);
+			diez[j] = (int *)malloc(sizeof(int) * 3);
 			diez[j][0] = line;
 			diez[j][1] = row;
 			j++;
@@ -61,5 +62,18 @@ int		**found_coord(char *tab, int **diez)
 		row++;
 		i++;
 	}
+	return (diez);
+}
+
+
+int		**set_letter(int **diez)
+{
+	static char c;
+
+	c = (!c) ? 'A' : c + 1 ;
+	diez[0][2] = (int)c ;
+	diez[1][2] = (int)c ;
+	diez[2][2] = (int)c ;
+	diez[3][2] = (int)c ;
 	return (diez);
 }
