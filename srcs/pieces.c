@@ -6,19 +6,19 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 22:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/05 08:55:57 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/07 18:31:53 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*ok_build(char **tab)
+int		*ok_build(int ***diez)
 {
 	int		*ok;
 	int		i;
 
 	i = 0;
-	while (tab[i])
+	while (diez[i])
 		i++;
 
 	ok = (int *)malloc(sizeof(int) * i + 1);

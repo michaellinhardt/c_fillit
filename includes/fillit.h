@@ -44,8 +44,8 @@ int						check_connect_termi(char *buf, int i, int valid2);
 char					put_to_alphabet_tab(char *str, char c);
 
 // fichier solve_it.c
-void					solve_it(char **tab);
-int						loop_mapsnap(t_mapsnap *mapsnap, char **tab);
+void					solve_it(int ***diez);
+int						loop_mapsnap(t_mapsnap *mapsnap, int ***diez, int map_size);
 
 
 // fichier create_tab.c
@@ -59,9 +59,11 @@ char					put_to_left_tab(char *str, int ok);
 char					*left_once_tab(char *tmp);
 
 // fichier map.c
-int						map_first_size(char **tab);
+int						map_first_size(int ***diez);
 char					*map_build(int map_size);
-char					*map_insert(char *map_str, char *piece);
+char					*map_insert(char *map_str, int **diez, int map_size);
+int						calc_check_pos(int i, int line, int row, int map_size);
+char					*put_piece_on_map(char *map_str, int **diez, int i, int map_size);
 
 // fichier mapsnap.c
 t_mapsnap				*snapit(t_mapsnap *prev, int *ok, char *map_str, int last);
@@ -69,7 +71,7 @@ void					free_mapsnap(t_mapsnap *mapsnap);
 void					free_this_snap(t_mapsnap *free_it);
 
 // fichier pieces.c
-int						*ok_build(char **tab);
+int						*ok_build(int ***diez);
 int						*ok_remove(int *ok, int remove);
 
 // fichier create_diez_tab.c

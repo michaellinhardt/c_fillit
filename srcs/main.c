@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/07 16:54:21 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/07 18:35:35 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(int ac, char **av)
 	diez = create_diez_tab(tab);
 	//test(diez);
 	ft_strdel(&buf);	
-	solve_it(tab);
+	solve_it(diez);
 	return (0);
 }
 
