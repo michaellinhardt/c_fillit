@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/07 10:40:19 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/07 13:17:42 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ char		*map_insert(char *map_str, char *piece)
 {
 	map_str++;
 	piece++;
-	return ((char *)"ok");
+	return ((char *)NULL);
 }
