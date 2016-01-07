@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/05 03:45:14 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/07 10:40:19 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,11 @@ char		*map_build(int map_size)
 		newline_count = (newline_count == newline) ? 1 : newline_count + 1 ;
 	}
 	return (map_str);
+}
+
+char		*map_insert(char *map_str, char *piece)
+{
+	map_str++;
+	piece++;
+	return ((char *)"ok");
 }

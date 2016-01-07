@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/05 10:20:41 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/07 10:33:09 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,22 @@ int		loop_mapsnap(t_mapsnap *mapsnap, char **tab)
 {
 	int			i;
 	char		*map_new;
+	static int	id;	if (!id) id = 0; id++; // debuging
+
+	print_snap(mapsnap, id);
+
+	if (mapsnap->ok[0] == -1)
+	{
+		printf("\nRIEN A POSER !!\n");
+		return 1;
+	}
 
 	i = 0;
 	while (mapsnap->ok[i] != -1)
 	{
 		if ((map_new = map_insert(mapsnap->map_str, tab[mapsnap->ok[i]])))
-			loop_mapsnap(snapit(mapsnap, ok_remove(mapsnap->ok, mapsnap->ok[i]), map_new, mapsnap->ok[i]), tab);
+			if (loop_mapsnap(snapit(mapsnap, ok_remove(mapsnap->ok, mapsnap->ok[i]), map_new, mapsnap->ok[i]), tab))
+				return (1);
 		i++;
 	}
 	return (0);
