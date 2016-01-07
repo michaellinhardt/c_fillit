@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/07 16:42:34 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/07 16:54:21 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int		main(int ac, char **av)
 {
-	termi	*list;
 	char 	**tab;
 	char	*buf;
 	int		***diez;
 
 	buf = ft_strnew(BUF_SIZE);
-	list = NULL;
 	tab = NULL;
 	diez = NULL;
 	if (ac != 2)
@@ -28,9 +26,6 @@ int		main(int ac, char **av)
 	buf = read_and_check(av, buf);
 	tab = create_tab2(buf, tab);
 	convert_tab(tab);
-//	list = buffer_to_list(buf, list);
-//	convert_list(list);
-//	ft_putstr(list->piece);
 	diez = create_diez_tab(tab);
 	//test(diez);
 	ft_strdel(&buf);	
