@@ -6,12 +6,12 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/07 10:13:19 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/07 15:54:28 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
-#define FILLIT_H
+# define FILLIT_H
 
 # include <stdio.h>
 
@@ -84,7 +84,12 @@ void					free_this_snap(t_mapsnap *free_it);
 int						*ok_build(char **tab);
 int						*ok_remove(int *ok, int remove);
 
+// fichier create_diez_tab.c
+int						***create_diez_tab(char **tab);
+int						**found_coord(char *tab,int **diez);
+
 // debug
 void					print_snap(t_mapsnap *mapsnap, int id);
+void					test(int ***diez);
 
 #endif
