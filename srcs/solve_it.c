@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/07 22:48:02 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/08 16:45:20 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,26 @@ int		loop_mapsnap(t_mapsnap *mapsnap, int ***diez, int map_size, int id)
 {
 	int			i;
 	char		*map_new;
+	size_t		j;
 
 	id++;
-
 	if (mapsnap->ok[0] == -1)
 	{
 		ft_putstr(mapsnap->map_str);
 		return (1);
 	}
-
 	i = 0;
+	j = 0;
 	while (mapsnap->ok[i] > -1)
 	{
-		if ((map_new = map_insert(mapsnap->map_str, diez[mapsnap->ok[i]], map_size)))
-			if (loop_mapsnap(snapit(mapsnap, ok_remove(mapsnap->ok, mapsnap->ok[i]), map_new, mapsnap->ok[i]), diez, map_size, id))
-				return (1);
+		while (j <= ft_strlen(mapsnap->map_str))
+		{
+			if ((map_new = map_insert(mapsnap->map_str, diez[mapsnap->ok[i]], map_size, &j)))
+				if (loop_mapsnap(snapit(mapsnap, ok_remove(mapsnap->ok, mapsnap->ok[i]), map_new, mapsnap->ok[i]), diez, map_size, id))
+					return (1);
+			while ((mapsnap->map_str[++j] != '.') && (j <= ft_strlen(mapsnap->map_str)))
+				j++;
+		}
 		i++;
 	}
 	return (0);

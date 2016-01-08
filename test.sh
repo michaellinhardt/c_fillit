@@ -6,63 +6,74 @@ echo $green"Rebuild"
 make re
 echo $neutre"-----------"
 echo $green"0 arguments :"$red
-./fillit
+time ./fillit
 echo $neutre"-----------"
 echo $green"2 arguments :"$red
-./fillit sample/invalid_four sample/char.test
+time ./fillit sample/invalid_four sample/char.test
 echo $neutre"-----------"
 echo $green"Openning error :"$red
-./fillit sample/invalid_fo
+time ./fillit sample/invalid_fo
 echo $neutre"-----------"
 echo $green"char.test :"$red
-./fillit sample/char.test
+time ./fillit sample/char.test
 echo $neutre"-----------"
 echo $green"invalid_char1 :"$red
-./fillit sample/invalid_char1
+time ./fillit sample/invalid_char1
 echo $neutre"-----------"$red
 echo $green"invalid_char2 :"$red
-./fillit sample/invalid_char2
+time ./fillit sample/invalid_char2
 echo $neutre"-----------"$red
 echo $green"invalid_char3 :"$red
-./fillit sample/invalid_char3
+time ./fillit sample/invalid_char3
 echo $neutre"-----------"$red
 echo $green"invalid_space1 :"$red
-./fillit sample/invalid_space1
+time ./fillit sample/invalid_space1
 echo $neutre"-----------"$red
 echo $green"invalid_space2 :"$red
-./fillit sample/invalid_space2
+time ./fillit sample/invalid_space2
 echo $neutre"-----------"$red
 echo $green"invalid_four :"$red
-./fillit sample/invalid_four
+time ./fillit sample/invalid_four
 echo $neutre"-----------"
 echo $green"invalid_max :"$red
-./fillit sample/invalid_max
+time ./fillit sample/invalid_max
 echo $neutre"-----------"$red
 echo $green"invalid_pieces :"$red
-./fillit sample/invalid_pieces
+time ./fillit sample/invalid_pieces
 echo $neutre"-----------"
 echo $green"invalid_pieces2 :"$red
-./fillit sample/invalid_pieces2
+time ./fillit sample/invalid_pieces2
 echo $neutre"-----------"
 echo $green"invalid_pieces3 :"$red
-./fillit sample/invalid_pieces3
+time ./fillit sample/invalid_pieces3
 echo $neutre"-----------"
 echo $green"invalid_pieces4 :"$red
-./fillit sample/invalid_pieces4
+time ./fillit sample/invalid_pieces4
 echo $neutre"-----------"
 echo $green"invalide_map_size :"$red
-./fillit sample/invalide_map_size
+time ./fillit sample/invalide_map_size
 echo $neutre"-----------"
 echo $green"invalide_map_size2 :"$red
-./fillit sample/invalide_map_size2
+time ./fillit sample/invalide_map_size2
 echo $neutre"-----------"
 echo $green"valid_four :"$red
-./fillit sample/valid_four
+time ./fillit sample/valid_four
 echo $neutre"-----------"$red
 echo $green"valid_max :"$red
-./fillit sample/valid_max
+time ./fillit sample/valid_max
 echo $neutre"-----------"$red
 echo $green"valid_one :"$red
-./fillit sample/valid_one
+time ./fillit sample/valid_one
 echo $neutre"-----------"$red
+echo $green"valid_onze :"$red
+time ./fillit sample/valid_onze
+echo $neutre"-----------"$red
+#echo $green"valid_23 :"$red
+#time ./fillit sample/valid_23
+#echo $neutre"-----------"$red
+echo $green"valid_12 :"$red
+time ./fillit sample/valid_douze
+echo $neutre"-----------"$red
+
+
 

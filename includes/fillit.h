@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/07 22:48:35 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/08 16:44:30 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char					*left_once_tab(char *tmp);
 // fichier map.c
 int						map_first_size(int ***diez);
 char					*map_build(int map_size);
-char					*map_insert(char *map_str, int **diez, int map_size);
+char					*map_insert(char *map_str, int **diez, int map_size, size_t *j);
 int						calc_check_pos(int i, int line, int row, int map_size);
 char					*put_piece_on_map(char *map_str, int **diez, int i, int map_size);
 

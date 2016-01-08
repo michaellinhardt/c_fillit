@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:46:32 by mconnat           #+#    #+#             */
-/*   Updated: 2015/12/29 16:46:40 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:51:26 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		convert_tab(char **tab)
 	{
 		put_to_top_tab(tab[i], 0);
 		put_to_left_tab(tab[i], 0);
-		put_to_alphabet_tab(tab[i], c);
+		//put_to_alphabet_tab(tab[i], c);
 		c++;
 		i++;
 	}

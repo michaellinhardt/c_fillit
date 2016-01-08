@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 10:01:52 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/07 22:27:14 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/08 14:38:08 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		**found_coord(char *tab, int **diez)
 	diez = (int **)malloc(sizeof(int *) * 4);
 	while (tab[i])
 	{
-		if (ft_isalpha(tab[i]))
+		if (tab[i] == '#')
 		{
 			diez[j] = (int *)malloc(sizeof(int) * 3);
 			diez[j][0] = line;

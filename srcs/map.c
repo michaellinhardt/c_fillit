@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/07 22:42:31 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/08 16:49:53 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ char		*map_build(int map_size)
 	return (map_str);
 }
 
-char		*map_insert(char *map_str, int **diez, int map_size)
+char		*map_insert(char *map_str, int **diez, int map_size, size_t *j)
 {
-	int i;
-	int check_pos;
-	
-	i = -1;
+	int		check_pos;
+	int		i;
+
+	i = *j - 1;
 	while (map_str[++i])
 	{
 		if (map_str[i] != '\n')
