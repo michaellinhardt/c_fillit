@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/08 16:49:53 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/08 17:04:38 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char		*map_insert(char *map_str, int **diez, int map_size, size_t *j)
 				check_pos = calc_check_pos(i, diez[3][0], diez[3][1], map_size);
 				if (map_str[check_pos] != '.')
 					continue ;
+				*j = i;
 				return (put_piece_on_map(map_str, diez, i, map_size));
 			}
 	}
