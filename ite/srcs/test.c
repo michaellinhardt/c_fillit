@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/11 05:49:58 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/11 13:59:51 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	generate(t_tetri *t, t_guide *g, int t_total)
 	separator("LOOP START");
 
 	f = t;
+	t_done = 0;
 	while (t_done < t_total)
 	{
 		if (!g->last && g->nb > g->max)
@@ -46,8 +47,8 @@ void	generate(t_tetri *t, t_guide *g, int t_total)
 			break ;
 		}
 		t_done = 0;
-		while (tetri_insert(&t, g))
-			;
+		
+			
 		break;
 	}
 	printf("Over!\n");
@@ -56,11 +57,18 @@ void	generate(t_tetri *t, t_guide *g, int t_total)
 
 int 	tetri_insert(t_tetri *t, t_guide *g)
 {
-	printf("insert: %d\n", t->id);
-	if (g->nb == g->max)
-		return (0);
-	
-	return (1);
+	while (t)
+	{
+		if (!t->boo && g->nb < g->max)
+		{
+			printf("insert: %d\n", t->id);
+			g->nb += 1;
+			return ((t->boo = 1));
+		}
+		t = t->next;
+	}
+	g->last += 1;
+	return (0);
 }
 
 int 	tetri_total(t_tetri *t, int i)
@@ -90,7 +98,7 @@ t_tetri		*tetri_init(t_tetri *next, int nb)
 	t_tetri		*t;
 
 	t = (t_tetri*)malloc(sizeof(t_tetri)*1);
-	t->id = nb - 1;
+	t->id = nb;
 	t->boo = 0;
 	t->next = next;
 	if ((nb - 1) > 0)

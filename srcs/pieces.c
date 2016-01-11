@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 22:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/07 18:31:53 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/09 21:18:40 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int		*ok_build(int ***diez)
 	i = 0;
 	while (diez[i])
 		i++;
-
-	ok = (int *)malloc(sizeof(int) * i + 1);
+	ok = (int *)malloc(sizeof(int) * (i + 1));
 	ok[i] = -1;
 	while (i > -1 && i--)
 		ok[i] = i;
@@ -37,7 +36,7 @@ int		*ok_remove(int *ok, int piece)
 	i = 0;
 	while (ok[i] != -1)
 		i++;
-	if (!(ok_new = (int *)malloc(sizeof(int) * i)))
+	if (!(ok_new = (int *)malloc(sizeof(int) * (i + 1))))
 		return (NULL);
 	ok_new[i] = -1;
 	i = 0;

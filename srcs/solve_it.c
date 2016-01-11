@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/28 11:10:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/08 16:45:20 by mlinhard         ###   ########.fr       */
+/*   Created: 2015/12/29 16:48:05 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/01/09 21:35:59 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	solve_it(int ***diez)
 	int			map_size;
 	char		*map_str;
 	int			*ok;
-	t_mapsnap	*mapsnap;
 
 	map_size = map_first_size(diez) - 1;
 	while (42)
@@ -25,38 +24,48 @@ void	solve_it(int ***diez)
 		map_size++;
 		map_str = map_build(map_size);
 		ok = ok_build(diez);
-		mapsnap = snapit((t_mapsnap *)NULL, ok, map_str, -1);
-		if (loop_mapsnap(mapsnap, diez, map_size, 0))
+		if (fillit(map_str, ok, diez, map_size))
+		{
+			free(map_str);
 			break ;
-		free_mapsnap(mapsnap);
+		}
+		free(map_str);
 	}
 }
 
-int		loop_mapsnap(t_mapsnap *mapsnap, int ***diez, int map_size, int id)
+int		fillit(char *map_str, int *ok, int ***diez, int map_size)
 {
 	int			i;
-	char		*map_new;
 	size_t		j;
+	size_t		len;
 
-	id++;
-	if (mapsnap->ok[0] == -1)
+	if (ok[0] == -1)
 	{
-		ft_putstr(mapsnap->map_str);
+		free(ok);
+		printf("%s\n", map_str);
 		return (1);
 	}
 	i = 0;
 	j = 0;
-	while (mapsnap->ok[i] > -1)
+	len = ft_strlen(map_str);
+	while (ok[i] > -1)
 	{
-		while (j <= ft_strlen(mapsnap->map_str))
+		while (j <= len)
 		{
-			if ((map_new = map_insert(mapsnap->map_str, diez[mapsnap->ok[i]], map_size, &j)))
-				if (loop_mapsnap(snapit(mapsnap, ok_remove(mapsnap->ok, mapsnap->ok[i]), map_new, mapsnap->ok[i]), diez, map_size, id))
+			if (map_insert(map_str, diez[ok[i]], map_size, &j))
+			{
+				if (fillit(map_str, ok_remove(ok, ok[i]), diez, map_size))
+				{
+					free(ok);
 					return (1);
-			while ((mapsnap->map_str[++j] != '.') && (j <= ft_strlen(mapsnap->map_str)))
-				j++;
+				}
+				else
+					map_remove(map_str, diez[ok[i]], map_size, &j);
+			}
+			j++;
 		}
 		i++;
 	}
+	free(ok);
 	return (0);
 }

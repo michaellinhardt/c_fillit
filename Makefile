@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/08 16:33:39 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/09 21:12:30 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,17 @@ SRCS	= 	create_tab.c \
 			convert_tab2.c \
 			create_diez_tab.c \
 			check_file.c \
-			solve_it.c \
 			read_file.c \
+			free.c \
+			solve_it.c \
 			map.c \
+			map2.c \
 			pieces.c \
-			mapsnap.c \
 			main.c
 
 HEADER	=	fillit.h
 
-FLAGS	=	-Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror -g
 
 HDIR 	=	./includes/
 LDIR 	= 	./libs/
@@ -65,7 +66,15 @@ fclean: clean
 re: fclean all
 
 test: re all
-	@time ./fillit sample/valid_heigh_pdf | /bin/cat -e
+	@time ./fillit sample/valid_four_pdf | /bin/cat -e
+
+leaks: re all -leaks -space
+
+-leaks:
+	@valgrind --leak-check=yes ./fillit sample/valid_four_pdf
+
+-space:
+	@/bin/echo 
 
 .PHONY: all clean fclean re test
 

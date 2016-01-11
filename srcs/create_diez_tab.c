@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 10:01:52 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/08 14:38:08 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/09 20:34:12 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		**found_coord(char *tab, int **diez)
 	j = 0;
 	line = 0;
 	row = 0;
-	diez = (int **)malloc(sizeof(int *) * 4);
+	diez = (int **)malloc(sizeof(int *) * 5);
 	while (tab[i])
 	{
 		if (tab[i] == '#')
@@ -52,6 +52,7 @@ int		**found_coord(char *tab, int **diez)
 			diez[j] = (int *)malloc(sizeof(int) * 3);
 			diez[j][0] = line;
 			diez[j][1] = row;
+			diez[j][2] = 'A';
 			j++;
 		}
 		if (tab[i] == '\n')
@@ -62,6 +63,7 @@ int		**found_coord(char *tab, int **diez)
 		row++;
 		i++;
 	}
+	diez[4] = (int *)NULL;
 	return (diez);
 }
 
@@ -70,7 +72,7 @@ int		**set_letter(int **diez)
 {
 	static char c;
 
-	c = (!c) ? 'A' : c + 1 ;
+	c = (!c) ? (int)'A' : c + 1 ;
 	diez[0][2] = (int)c ;
 	diez[1][2] = (int)c ;
 	diez[2][2] = (int)c ;

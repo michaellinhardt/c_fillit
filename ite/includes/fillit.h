@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/11 05:24:59 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/11 13:22:22 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ void	generate(t_tetri *t, t_guide *g, int t_total);
 t_guide	*guide_init(t_tetri *t);
 void		guide_print(t_guide *t, int i);
 int 	tetri_total(t_tetri *t, int i);
+int 	tetri_insert(t_tetri *t, t_guide *g);
 
 #endif
