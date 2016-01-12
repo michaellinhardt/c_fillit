@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 10:01:52 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 04:51:02 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 05:54:53 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,30 @@ int		***create_diez_tab(char **tab)
 	{
 		diez[i] = found_coord(tab[i], diez[i]);
 		diez[i] = set_letter(diez[i]);
+		diez[i] = set_size(diez[i]);
 		i++;
 	}
 	diez[i] = (int **)NULL;
+	return (diez);
+}
+
+int		**set_size(int **diez)
+{
+	int i;
+	int width;
+	int heigh;
+
+	width = 0;
+	heigh = 0;
+	i = 0;
+	while (diez[i])
+	{
+		width = (diez[i][1] > width) ? diez[i][1] : width;
+		heigh = (diez[i][0] > heigh) ? diez[i][0] : heigh;
+		i++;
+	}
+	diez[i][3] = (width + 1);
+	diez[i][4] = (heigh + 1);
 	return (diez);
 }
 
@@ -49,10 +70,12 @@ int		**found_coord(char *tab, int **diez)
 	{
 		if (tab[i] == '#')
 		{
-			diez[j] = (int *)malloc(sizeof(int) * 3);
+			diez[j] = (int *)malloc(sizeof(int) * 5);
 			diez[j][0] = line;
 			diez[j][1] = row;
 			diez[j][2] = 'A';
+			diez[j][3] = 10;
+			diez[j][4] = 20;
 			j++;
 		}
 		line_counter(&line, &row, tab[i]);

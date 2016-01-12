@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 05:09:23 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 05:52:33 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int		***create_diez_tab(char **tab);
 int		**found_coord(char *tab, int **diez);
 int		**set_letter(int **diez);
 void	line_counter(int *line, int *row, char c);
+int		**set_size(int **diez);
 
 /*
 ** fichier free.c
