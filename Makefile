@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/11 14:35:39 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/12 04:44:11 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,12 +65,12 @@ fclean: clean
 re: fclean all
 
 test: re all
-	@time ./fillit sample/valid_four_pdf | /bin/cat -e
+	@time ./fillit sample/valid_heigh_pdf | /bin/cat -e
 
 leaks: re all -leaks -space
 
 -leaks:
-	@valgrind --leak-check=yes ./fillit sample/valid_four_pdf
+	@valgrind --leak-check=yes --track-origins=yes ./fillit sample/valid_heigh_pdf
 
 -space:
 	@/bin/echo 

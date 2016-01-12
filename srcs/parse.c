@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mconnat <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:43:10 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/11 15:18:46 by mconnat          ###   ########.fr       */
+/*   Updated: 2016/01/12 04:45:40 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ char	**read_file(int fd, int *line, int len)
 	char	**tab;
 	int		i;
 
+	ret = 0;
 	i = -1;
 	tab = (char **)malloc(sizeof(char *) * (len + 1));
 	while ((ret = read(fd, buf, BUF_SIZE)))
