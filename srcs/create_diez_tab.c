@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 10:01:52 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/09 20:34:12 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/11 15:09:34 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ int		**found_coord(char *tab, int **diez)
 	int line;
 	int row;
 
-	i = 0;
+	i = -1;
 	j = 0;
 	line = 0;
 	row = 0;
 	diez = (int **)malloc(sizeof(int *) * 5);
-	while (tab[i])
+	while (tab[++i])
 	{
 		if (tab[i] == '#')
 		{
@@ -55,27 +55,30 @@ int		**found_coord(char *tab, int **diez)
 			diez[j][2] = 'A';
 			j++;
 		}
-		if (tab[i] == '\n')
-		{
-			line++;
-			row = -1;
-		}
+		line_counter(&line, &row, tab[i]);
 		row++;
-		i++;
 	}
 	diez[4] = (int *)NULL;
 	return (diez);
 }
 
+void	line_counter(int *line, int *row, char c)
+{
+	if (c == '\n')
+	{
+		*line += 1;
+		*row = -1;
+	}
+}
 
 int		**set_letter(int **diez)
 {
 	static char c;
 
-	c = (!c) ? (int)'A' : c + 1 ;
-	diez[0][2] = (int)c ;
-	diez[1][2] = (int)c ;
-	diez[2][2] = (int)c ;
-	diez[3][2] = (int)c ;
+	c = (!c) ? (int)'A' : c + 1;
+	diez[0][2] = (int)c;
+	diez[1][2] = (int)c;
+	diez[2][2] = (int)c;
+	diez[3][2] = (int)c;
 	return (diez);
 }

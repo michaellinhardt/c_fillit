@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:46:32 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/08 15:51:26 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/11 14:55:59 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void		convert_tab(char **tab)
 {
-	char	c;
 	int		i;
 
-	c = 'A';
 	i = 0;
 	while (tab[i])
 	{
 		put_to_top_tab(tab[i], 0);
 		put_to_left_tab(tab[i], 0);
-		//put_to_alphabet_tab(tab[i], c);
-		c++;
 		i++;
 	}
 }
@@ -40,9 +36,9 @@ char		put_to_top_tab(char *str, int ok)
 			str[2] == '#' || str[3] == '#')
 		ok = 1;
 	if (ok == 1)
-		return *(str);
+		return (*str);
 	put_to_top_tab(str, ok);
-	return *(str);
+	return (*str);
 }
 
 char		*up_once_tab(char *tmp)
@@ -75,9 +71,9 @@ char		put_to_left_tab(char *str, int ok)
 			str[10] == '#' || str[15] == '#')
 		ok = 1;
 	if (ok == 1)
-		return *(str);
+		return (*str);
 	put_to_left_tab(str, ok);
-	return *(str);
+	return (*str);
 }
 
 char		*left_once_tab(char *tmp)

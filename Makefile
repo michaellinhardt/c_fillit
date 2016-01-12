@@ -6,17 +6,16 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/09 21:12:30 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/11 14:35:39 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= 	fillit
-SRCS	= 	create_tab.c \
-			convert_tab.c \
-			convert_tab2.c \
+
+SRCS	=	convert_tab.c \
 			create_diez_tab.c \
-			check_file.c \
-			read_file.c \
+			parse2.c \
+			parse.c \
 			free.c \
 			solve_it.c \
 			map.c \

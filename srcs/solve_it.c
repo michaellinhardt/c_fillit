@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/09 21:35:59 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 04:37:05 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ int		fillit(char *map_str, int *ok, int ***diez, int map_size)
 	}
 	i = 0;
 	j = 0;
-	len = ft_strlen(map_str);
+	len = (ft_strlen(map_str) - 1);
 	while (ok[i] > -1)
 	{
 		while (j <= len)
 		{
-			if (map_insert(map_str, diez[ok[i]], map_size, &j))
+			if (map_insert(map_str, diez[ok[i]], map_size, j))
 			{
 				if (fillit(map_str, ok_remove(ok, ok[i]), diez, map_size))
 				{
@@ -60,11 +60,15 @@ int		fillit(char *map_str, int *ok, int ***diez, int map_size)
 					return (1);
 				}
 				else
-					map_remove(map_str, diez[ok[i]], map_size, &j);
+				{
+					map_remove(map_str, diez[ok[i]], map_size, j);
+				}
 			}
 			j++;
 		}
+		j = 0;
 		i++;
+		break;
 	}
 	free(ok);
 	return (0);

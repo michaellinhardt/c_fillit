@@ -6,50 +6,49 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/09 21:06:59 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/11 15:10:48 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	print_diez(int ***diez)
-{
-		int i = -1; int j = -1; int k = -1;
-	while (diez[++i])
-	{
-		printf("Piece: %d\n", i);
-		while (diez[i][++j])
-				printf("%d - %d - %d\n", diez[i][j][0], diez[i][j][1], diez[i][j][2]);
-		j = -1;
-	}
-	j++; k++;
-}
-
-void	print_ok(int *ok)
-{
-	int i = -1;
-	printf("{ "); while (ok[++i] > -1) printf("%d,", ok[i]); printf("-1 }\n");
-}
-
 int		main(int ac, char **av)
 {
-	char 	**tab;
-	char	*buf;
+	char	**tab;
 	int		***diez;
 
-	buf = ft_strnew(BUF_SIZE);
 	tab = NULL;
 	diez = NULL;
 	if (ac != 2)
 		call_error(1);
-	buf = read_and_check(av, buf);
-	tab = create_tab2(buf, tab);
+	tab = parse(av);
 	convert_tab(tab);
 	diez = create_diez_tab(tab);
 	free_tab(tab);
-	ft_strdel(&buf);
 	solve_it(diez);
 	free_diez(diez);
-
 	return (0);
+}
+
+void	call_error(int info)
+{
+	if (info == 1)
+		ft_putstr("error wrong arguments\n");
+	if (info == 2)
+		ft_putstr("error bad pieces\n");
+	if (info == 3)
+		ft_putstr("error bad map\n");
+	if (info == 4)
+		ft_putstr("error open\n");
+	if (info == 5)
+		ft_putstr("error close\n");
+	if (info == 6)
+		ft_putstr("error char\n");
+	if (info == 7)
+		ft_putstr("error line\n");
+	if (info == 8)
+		ft_putstr("error modulo\n");
+	if (info == 42)
+		ft_putstr("malloc error\n");
+	exit(0);
 }
