@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 05:07:31 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 07:52:04 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int		main(int ac, char **av)
 
 void	call_error(int info)
 {
+	ft_putstr("error\n");
+	exit(0);
 	if (info == 1)
 		ft_putstr("error wrong arguments\n");
 	if (info == 2)

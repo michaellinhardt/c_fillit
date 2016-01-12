@@ -6,14 +6,12 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 07:15:09 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 07:51:16 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
-
-# include <stdio.h>
 
 # include <fcntl.h>
 # include "libft.h"
@@ -121,7 +119,7 @@ char	*put_piece_on_map(char *map_str, int **diez, int i, int map_size);
 
 int		map_insert(char *map_str, int **diez, int map_size, size_t i);
 int		too_heigh(int **diez, int pos, int map_size);
-int		too_width(int **diez, int pos, int map_size);
+int		too_width(int **diez, size_t *pos, int map_size, char *map_str);
 
 
 #endif

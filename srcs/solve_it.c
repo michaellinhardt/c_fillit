@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/12 07:24:36 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 07:52:24 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	solve_it(int ***diez)
 			break ;
 		free(map_str);
 	}
-	printf("%s\n", map_str);
+	ft_putstr(map_str);
+	ft_putchar('\n');
 	free(map_str);
 }
 
@@ -43,13 +44,8 @@ char	fillit(char *map_str, int t, int ***diez, int map_size)
 	{
 		if (too_heigh(diez[t], pos, map_size))
 			return (0);
-		if (too_width(diez[t], pos, map_size))
-			{
-				while(map_str[pos] != '\n')
-					pos++;
-				pos++;
-				continue ;
-			}
+		if (too_width(diez[t], &pos, map_size, map_str))
+			continue ;
 		if (map_insert(map_str, diez[t], map_size, pos))
 		{
 			if (fillit(map_str, (t + 1), diez, map_size))
