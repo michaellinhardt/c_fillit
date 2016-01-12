@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 10:01:52 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 05:54:53 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 05:58:06 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int		**set_size(int **diez)
 		heigh = (diez[i][0] > heigh) ? diez[i][0] : heigh;
 		i++;
 	}
-	diez[i][3] = (width + 1);
-	diez[i][4] = (heigh + 1);
+	diez[0][3] = (width + 1);
+	diez[0][4] = (heigh + 1);
 	return (diez);
 }
 
@@ -74,8 +74,8 @@ int		**found_coord(char *tab, int **diez)
 			diez[j][0] = line;
 			diez[j][1] = row;
 			diez[j][2] = 'A';
-			diez[j][3] = 10;
-			diez[j][4] = 20;
+			diez[j][3] = 0;
+			diez[j][4] = 0;
 			j++;
 		}
 		line_counter(&line, &row, tab[i]);
