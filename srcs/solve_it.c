@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/12 06:49:46 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 07:24:36 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	solve_it(int ***diez)
 	free(map_str);
 }
 
-int		fillit(char *map_str, int t, int ***diez, int map_size)
+char	fillit(char *map_str, int t, int ***diez, int map_size)
 {
 	size_t		pos;
 	size_t		len;
