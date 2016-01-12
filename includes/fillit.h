@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 01:56:05 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 05:09:23 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	free_diez(int ***diez);
 */
 
 void	solve_it(int ***diez);
-int		fillit(char *map_str, int *ok, int ***diez, int map_size);
+int		fillit(char *map_str, int t, int ***diez, int map_size);
 
 /*
 ** fichier map.c
@@ -119,12 +119,5 @@ char	*put_piece_on_map(char *map_str, int **diez, int i, int map_size);
 */
 
 void	map_remove(char *map_str, int **diez, int map_size, size_t i);
-
-/*
-** fichier pieces.c
-*/
-
-int		*ok_build(int ***diez);
-int		*ok_remove(int *ok, int piece);
 
 #endif
