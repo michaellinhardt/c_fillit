@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/12 07:49:31 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 07:56:28 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,22 @@ int			map_insert(char *map_str, int **diez, int map_size, size_t i)
 	int len;
 
 	len = (ft_strlen(map_str) - 2);
-	if (map_str[i])
+	if (map_str[i] && map_str[i] != '\n')
 	{
-		if (map_str[i] != '\n')
-		{
-			check_pos = calc_check_pos(i, diez[0][0], diez[0][1], map_size);
-			if (check_pos > len || map_str[check_pos] != '.')
-				return (0);
-			check_pos = calc_check_pos(i, diez[1][0], diez[1][1], map_size);
-			if (check_pos > len || map_str[check_pos] != '.')
-				return (0);
-			check_pos = calc_check_pos(i, diez[2][0], diez[2][1], map_size);
-			if (check_pos > len || map_str[check_pos] != '.')
-				return (0);
-			check_pos = calc_check_pos(i, diez[3][0], diez[3][1], map_size);
-			if (check_pos > len || map_str[check_pos] != '.')
-				return (0);
-			put_piece_on_map(map_str, diez, i, map_size);
-
-			return (1);
-		}
+		check_pos = calc_check_pos(i, diez[0][0], diez[0][1], map_size);
+		if (check_pos > len || map_str[check_pos] != '.')
+			return (0);
+		check_pos = calc_check_pos(i, diez[1][0], diez[1][1], map_size);
+		if (check_pos > len || map_str[check_pos] != '.')
+			return (0);
+		check_pos = calc_check_pos(i, diez[2][0], diez[2][1], map_size);
+		if (check_pos > len || map_str[check_pos] != '.')
+			return (0);
+		check_pos = calc_check_pos(i, diez[3][0], diez[3][1], map_size);
+		if (check_pos > len || map_str[check_pos] != '.')
+			return (0);
+		put_piece_on_map(map_str, diez, i, map_size);
+		return (1);
 	}
 	return (0);
 }
