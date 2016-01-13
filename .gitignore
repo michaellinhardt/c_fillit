@@ -4,5 +4,4 @@ fillit
 *.dSYM
 *.o
 *.a
-README.md
-*.tuu
+*.md
