@@ -9,7 +9,7 @@
 | ------------- | ------------- |
 | docs/fillit-subject-fr.pdf	 | subject in french		 |
 | includes/			 | headers location						 |
-| libs/				 | libft project <a href="https://github.com/nesthub/c_libft" target="_blank" >here</a>				 |
+| libs/				 | libft project <a href="https://github.com/nesthub/c_libft" target="_blank">here</a>				 |
 | srcs/				 | .c sources							 |
 | test.sh			 | dev test script						 |
 | sample			 | tetriminos test pieces for test.sh	 |
