@@ -1,3 +1,7 @@
 fillit
 .~*
 .DS*
+*.dSYM
+*.o
+*.a
+README.md
