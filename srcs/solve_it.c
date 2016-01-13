@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/12 07:52:24 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 11:23:34 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	solve_it(int ***diez)
 		free(map_str);
 	}
 	ft_putstr(map_str);
-	ft_putchar('\n');
 	free(map_str);
 }
 

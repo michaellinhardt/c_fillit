@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_diez_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 10:01:52 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 05:58:06 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 12:27:59 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		***create_diez_tab(char **tab)
 	i = 0;
 	while (tab[i])
 	{
-		diez[i] = found_coord(tab[i], diez[i]);
+		diez[i] = found_coord(tab[i], diez[i], 0, 0);
 		diez[i] = set_letter(diez[i]);
 		diez[i] = set_size(diez[i]);
 		i++;
@@ -54,17 +54,13 @@ int		**set_size(int **diez)
 	return (diez);
 }
 
-int		**found_coord(char *tab, int **diez)
+int		**found_coord(char *tab, int **diez, int row, int line)
 {
 	int i;
 	int j;
-	int line;
-	int row;
 
 	i = -1;
 	j = 0;
-	line = 0;
-	row = 0;
 	diez = (int **)malloc(sizeof(int *) * 5);
 	while (tab[++i])
 	{

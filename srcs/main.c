@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mconnat <mconnat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 16:48:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 07:52:04 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 12:25:42 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		main(int ac, char **av)
 void	call_error(int info)
 {
 	ft_putstr("error\n");
-	exit(0);
+	exit(1);
 	if (info == 1)
 		ft_putstr("error wrong arguments\n");
 	if (info == 2)
@@ -52,5 +52,7 @@ void	call_error(int info)
 		ft_putstr("error modulo\n");
 	if (info == 42)
 		ft_putstr("malloc error\n");
-	exit(0);
+	if (info == 10)
+		ft_putstr("lolilol error\n");
+	exit(1);
 }

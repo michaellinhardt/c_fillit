@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 18:01:05 by mconnat           #+#    #+#             */
-/*   Updated: 2016/01/12 07:51:16 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 12:27:57 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	**read_file(int fd, int *line, int len);
 
 void	ret_len(char *buf, int *line);
 void	check_ret(int line, int len);
-int		check_tetri(char *buf);
+int		check_tetri(char *buf, int i, int diez, int dot);
 void	check_connect_tetri(char *buf, int i, int *valid2, int *valid);
 
 /*
@@ -84,7 +84,7 @@ char	*left_once_tab(char *tmp);
 */
 
 int		***create_diez_tab(char **tab);
-int		**found_coord(char *tab, int **diez);
+int		**found_coord(char *tab, int **diez, int row, int line);
 int		**set_letter(int **diez);
 void	line_counter(int *line, int *row, char c);
 int		**set_size(int **diez);
@@ -120,6 +120,5 @@ char	*put_piece_on_map(char *map_str, int **diez, int i, int map_size);
 int		map_insert(char *map_str, int **diez, int map_size, size_t i);
 int		too_heigh(int **diez, int pos, int map_size);
 int		too_width(int **diez, size_t *pos, int map_size, char *map_str);
-
 
 #endif

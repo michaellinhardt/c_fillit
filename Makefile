@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 15:26:45 by mconnat           #+#    #+#              #
-#    Updated: 2016/01/12 05:59:23 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/01/13 16:39:46 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,24 +55,31 @@ OK				= $(WHITE)[ $(GREEN)OK $(WHITE)]
 FAIL			= $(WHITE)[ $(RED)FAIL $(WHITE)]
 
 all: $(NAME)
+
 $(NAME):
-	@gcc $(FLAGS) $(SRC) -o $(NAME) -I$(HDIR) -L$(LDIR) -lft
+	make -C $(LDIR)
+	gcc $(FLAGS) $(SRC) -o $(NAME) -I$(HDIR) -L$(LDIR) -lft
+
 clean:
-	@/bin/rm -rf $(NAME)
+	make clean -C $(LDIR)
+	/bin/rm -rf $(NAME)
+
 fclean: clean
-	@/bin/rm -rf $(NAME)
+	make fclean -C $(LDIR)
+	/bin/rm -rf $(NAME)
+
 re: fclean all
 
 test: re all
-	@time ./fillit sample/valid_four_pdf | /bin/cat -e
+	time ./fillit sample/valid_four_pdf | /bin/cat -e
 
 leaks: re all -leaks -space
 
 -leaks:
-	@valgrind --leak-check=yes --track-origins=yes ./fillit sample/valid_four_pdf
+	valgrind --leak-check=yes --track-origins=yes ./fillit sample/valid_four_pdf
 
 -space:
-	@/bin/echo 
+	/bin/echo 
 
 .PHONY: all clean fclean re test
 

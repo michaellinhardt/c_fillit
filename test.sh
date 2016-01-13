@@ -64,16 +64,16 @@ time ./fillit sample/valid_max
 echo $neutre"-----------"$red
 echo $green"valid_one :"$red
 time ./fillit sample/valid_one
-echo $neutre"-----------"$red
-echo $green"valid_onze :"$red
-time ./fillit sample/valid_onze
-echo $neutre"-----------"$red
+#echo $neutre"-----------"$red
+#echo $green"valid_onze :"$red
+#time ./fillit sample/valid_onze
+#echo $neutre"-----------"$red
 #echo $green"valid_23 :"$red
 #time ./fillit sample/valid_23
 #echo $neutre"-----------"$red
-echo $green"valid_12 :"$red
-time ./fillit sample/valid_douze
-echo $neutre"-----------"$red
+#echo $green"valid_12 :"$red
+#time ./fillit sample/valid_douze
+#echo $neutre"-----------"$red
 
 
 

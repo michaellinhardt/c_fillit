@@ -6,13 +6,13 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 19:15:07 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/01/12 06:49:45 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/01/12 12:25:06 by mconnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	map_remove(char *map_str, int **diez, int map_size, size_t i)
+void		map_remove(char *map_str, int **diez, int map_size, size_t i)
 {
 	int		check_pos;
 
