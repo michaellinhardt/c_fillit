@@ -7,10 +7,9 @@
 ## repo map
 | repo path | description |
 | ------------- | ------------- |
-| fillit-algo.xls	 | excel technical algo doc				 |
-| doc.c				 | code documentations					 |
-| includes			 | headers location						 |
-| libs				 | libft.a project <a href="https://github.com/Serealyuzz/libft" target="_blank" >here</a>				 |
-| srcs				 | .c sources							 |
+| fillit-subject-fr.pdf	 | french subject				 |
+| includes/			 | headers location						 |
+| libs/				 | libft.a project <a href="https://github.com/nesthub/c_libft" target="_blank">here</a>				 |
+| srcs/				 | .c sources							 |
 | test.sh			 | dev test script						 |
 | sample			 | tetriminos test pieces for test.sh	 |
