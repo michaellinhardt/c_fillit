@@ -4,6 +4,7 @@
 - Date: dec. 2015
 - Project Group : <a href="https://github.com/Serealyuzz/" target="_blank" >mconnat</a> <a href="https://github.com/nesthub/" target="_blank" >mlinhard</a>
 
+![ALT TAG](https://github.com/nesthub/c_fillit/raw/master/docs/fillit.png)
 
 ## repo map
 | repo path | description |
